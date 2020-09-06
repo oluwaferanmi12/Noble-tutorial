@@ -81,7 +81,7 @@ body {
 }
 .carousel-inner > .bg-1 {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(./images/Noble-2.jpg);
+    url(../images/Noble-2.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -110,7 +110,7 @@ body {
 }
 .carousel-inner > .bg-2 {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(./images/books-on-shelf-in-library-256374.jpg);
+    url(../images/books-on-shelf-in-library-256374.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -120,7 +120,7 @@ body {
 }
 .carousel-inner > .bg-3 {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(./images/Noble-1.jpg);
+    url(../images/Noble-1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -319,7 +319,7 @@ body {
   height: 358px;
   color:#000;
   background-color: #f2fafa;
- 
+
 }
 .carousel-inner .carousel-caption h2 {
   color: black;
@@ -338,7 +338,6 @@ body {
 #footer {
   background: #000;
   height: 100px;
-
   max-height: 100px;
 }
 
@@ -358,49 +357,4 @@ body {
 #noble-copyright {
   font-family: sans-serif;
 }
-/* ----- THE CONTACT US PAGE -------- */
-#headerSlider {
-  z-index: -20;
-}
-.carousel-inner > .bg-c-1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
-    url(./images/noble-map-2.PNG);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100%;
-  min-height: 500px;
-  /* z-index: -20; */
-}
-.carousel-inner .carousel-caption {
-  text-align: center;
-  /* margin-bottom: 100px; */
-  /* z-index: ; */
-}
-.carousel-inner .carousel-caption h3 {
-  font-size: 35px;
-  font-weight: bold;
-  font-family: "Times New Roman", Times, serif;
-  padding-bottom: 15px;
-  color: #fff;
-}
-.carousel-inner .carousel-caption p {
-  letter-spacing: 3px;
-  font-family: monospace;
-  font-size: 1.3rem;
-  color: #f6f4ec;
-}
-.carousel-inner > .bg-c-2 {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
-    url(./images/noble-map-1.PNG);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100%;
-  min-height: 500px;
-}
-/* .carousel-inner .carousel-caption news{
-  margin: 0;
-} */
+
