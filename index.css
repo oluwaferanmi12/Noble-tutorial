@@ -81,7 +81,7 @@ body {
 }
 .carousel-inner > .bg-1 {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../images/Noble-2.jpg);
+    url(./images/Noble-2.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -110,7 +110,7 @@ body {
 }
 .carousel-inner > .bg-2 {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../images/books-on-shelf-in-library-256374.jpg);
+    url(./images/books-on-shelf-in-library-256374.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -120,7 +120,7 @@ body {
 }
 .carousel-inner > .bg-3 {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../images/Noble-1.jpg);
+    url(./images/Noble-1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
