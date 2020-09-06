@@ -1,0 +1,406 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: rgb(245, 239, 239);
+}
+#nav-bar #navbarNav .navbar-nav .nav-item #current {
+  color: #73b9ab !important;
+}
+/* -=========Styling of the Navbar====----- */
+#nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #29524a !important;
+  padding-top: 30px;
+  min-height: 100px;
+  border-bottom: solid 3px #9c9990;
+}
+.navbar {
+  background: #29524a !important;
+  color: #f4f4f4 !important;
+}
+
+.navbar-brand {
+  color: #dc493a !important;
+  font-family: cursive;
+  font-size: 2rem;
+}
+#side-head {
+  color: #f4f4f4;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  min-height: 400px;
+}
+/* 
+.navbar-nav {
+  float: right;
+} */
+
+.navbar-nav li {
+  padding: 0 10px;
+  /* float: right; */
+}
+
+.navbar-nav li a {
+  float: right;
+  text-align: left;
+  transition: 0.5s;
+  color: #f4f4f4 !important;
+}
+
+#nav-bar ul li a:hover {
+  color: #81cfc0 !important;
+}
+
+.navbar {
+  background: #fff;
+}
+
+.navbar-toggler {
+  border: none !important;
+}
+
+.nav-link {
+  color: #555 !important;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* ------Slider------ */
+/* .carousel-inner {
+  z-index: -20;
+} */
+#headerSlider {
+  z-index: -20;
+  margin-bottom: 0;
+}
+.carousel {
+  margin-bottom: 0;
+}
+.carousel-inner > .bg-1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./images/Noble-2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  min-height: 500px;
+  /* z-index: -20; */
+}
+.carousel-inner .theSlider {
+  text-align: center;
+  margin-bottom: 100px;
+  /* z-index: ; */
+}
+.carousel-inner .carousel-caption h3 {
+  font-size: 35px;
+  font-weight: lighter;
+  font-family: "Times New Roman", Times, serif;
+  padding-bottom: 15px;
+  color: #9c9990;
+}
+.carousel-inner .carousel-caption p {
+  letter-spacing: 1px;
+  font-family: monospace;
+  font-size: 1.3rem;
+  color: #9c9990;
+}
+.carousel-inner > .bg-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./images/books-on-shelf-in-library-256374.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  min-height: 500px;
+}
+.carousel-inner > .bg-3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./images/Noble-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  min-height: 500px;
+}
+.theFirstSlider {
+  border-bottom: solid 3px #969990;
+}
+
+/* ------About us AND MISSION , THEY ARE BOTH IN THE SAME CONTAINER------ */
+#about {
+  margin-top: 30px;
+  text-align: justify;
+  /* background: #555; */
+}
+.about-us h2 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #000;
+}
+#about .about-us {
+  background: #fff;
+  border-radius: 1%;
+  overflow: hidden;
+  /* margin: 5px; */
+  padding: 2rem;
+  height: 100%;
+  /* height: 80%; */
+}
+
+#about .about-us .btn {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#about .head-a {
+  color: #dc493a;
+  font-weight: bold;
+  font-family: cursive;
+}
+
+#about .about-content {
+  font-family: "Tittilium Web", sans-serif;
+  font-size: 16px;
+  color: #000;
+  /* font-weight: bold; */
+  /* padding-bottom: 1em */
+  /* letter-spacing: 3px; */
+}
+
+/* ------Vision and MIssion----- */
+#vision-mission {
+  background: #29524a;
+  background-position: auto 100px;
+  box-sizing: border-box;
+  min-height: 350px;
+  border-radius: 1%;
+  /* margin: 10px 5px; */
+  padding: 2rem;
+}
+#vision-mission h2 {
+  color: #dc493a;
+  font-weight: bold;
+  font-family: cursive;
+}
+#vision-mission p {
+  font-family: monospace;
+  font-size: 1.2rem;
+  color: #c0b8a2;
+  font-weight: bold;
+  /* padding-bottom: 1em; */
+}
+/* -------Founder------- */
+#author {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#author h1 {
+  text-align: left;
+  font-family: cursive;
+  font-weight: bolder;
+  color: #dc493a !important;
+  padding-bottom: 10px;
+}
+
+#author h1::after {
+  content: "";
+  background: #53847b;
+  display: block;
+  height: 3px;
+  width: 200px;
+  align-content: center;
+  /* align-content: center; */
+  margin: 10px;
+  border-radius: 3px;
+  margin-left: 20px;
+}
+
+.profile-pic {
+  margin-top: 10px;
+  /* margin-left: 1px; */
+}
+
+.profile-pic .img-box {
+  opacity: 1;
+  display: block;
+  position: relative;
+  /* max-height: 300px; */
+  /* max-width: 300px; */
+  /* border-radius: 50px; */
+  /* border: #555 solid 3px; */
+  /* overflow: hidden; */
+}
+
+.profile-pic .img-box img {
+  filter: grayscale(1);
+  transition: all 0.5s;
+
+  /* width: 100%; */
+}
+
+.profile-pic .img-box img:hover {
+  filter: grayscale(0);
+  cursor: pointer;
+  /* opacity: 1; */
+}
+
+.profile-pic h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #007bff;
+}
+
+#author .fa {
+  padding-top: 5px;
+  height: 25px;
+  /* position: absolute; */
+  width: 25px;
+  color: #dc493a;
+  background: #fff !important;
+  border-radius: 50%;
+}
+
+.img-box ul {
+  padding: 15px 0;
+  position: absolute;
+  margin-left: 3px;
+  z-index: 2;
+  bottom: 5rem;
+  left: 35%;
+  /* transform: translateX(-40%); */
+  transition: all 0.5s;
+  /* right: 50%; */
+  opacity: 0;
+}
+
+.img-box ul li {
+  padding: 5px;
+  display: inline-block;
+}
+
+.img-box:hover ul {
+  opacity: 1;
+}
+
+#author #wordAbout {
+  background: #f2fafa;
+  border-radius: 3px;
+  padding: 30px;
+  color: #000;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.2rem;
+  height: 358px;
+  /* letter-spacing: 2px; */
+}
+/* THE BRIEF SHOWCASE OF THE NEWS WITH CAROUSEL */
+
+.carousel-inner .news-1 {
+  height: 358px;
+  background-color: #f2fafa;
+  
+}
+.carousel-inner .news-1 .carousel-caption .p{
+  color: #000;
+}
+.carousel-inner .news-2 {
+  height: 358px;
+  background-color: #f2fafa;
+  
+}
+.carousel-inner .news-3 {
+  height: 358px;
+  color:#000;
+  background-color: #f2fafa;
+ 
+}
+.carousel-inner .carousel-caption h2 {
+  color: black;
+}
+
+.carousel-inner .carousel-item .news p{
+  color: #000;
+  font-weight: bold;
+}
+
+
+
+
+
+/* -----------FOOTER-------- */
+#footer {
+  background: #000;
+  height: 100px;
+
+  max-height: 100px;
+}
+
+.d-footer {
+  padding-top: 25px;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-align: center;
+  font-family: cursive;
+  color: #f4f4f4;
+}
+
+#footer-tutorial {
+  color: #dc493a;
+}
+
+#noble-copyright {
+  font-family: sans-serif;
+}
+/* ----- THE CONTACT US PAGE -------- */
+#headerSlider {
+  z-index: -20;
+}
+.carousel-inner > .bg-c-1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+    url(./images/noble-map-2.PNG);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  min-height: 500px;
+  /* z-index: -20; */
+}
+.carousel-inner .carousel-caption {
+  text-align: center;
+  /* margin-bottom: 100px; */
+  /* z-index: ; */
+}
+.carousel-inner .carousel-caption h3 {
+  font-size: 35px;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  padding-bottom: 15px;
+  color: #fff;
+}
+.carousel-inner .carousel-caption p {
+  letter-spacing: 3px;
+  font-family: monospace;
+  font-size: 1.3rem;
+  color: #f6f4ec;
+}
+.carousel-inner > .bg-c-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+    url(./images/noble-map-1.PNG);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  min-height: 500px;
+}
+/* .carousel-inner .carousel-caption news{
+  margin: 0;
+} */
