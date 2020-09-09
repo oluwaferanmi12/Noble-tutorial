@@ -1,0 +1,86 @@
+#nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #29524a !important;
+    padding-top: 30px;
+    min-height: 100px;
+    border-bottom: solid 3px #9c9990;
+}
+
+.navbar {
+    background: #29524a !important;
+    color: #f4f4f4 !important;
+}
+
+.navbar-brand {
+    color: #dc493a !important;
+    font-family: cursive;
+    font-size: 2rem;
+}
+
+#side-head {
+    color: #f4f4f4;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    min-height: 400px;
+}
+
+/* 
+.navbar-nav {
+  float: right;
+} */
+
+.navbar-nav li {
+    padding: 0 10px;
+    /* float: right; */
+}
+
+.navbar-nav li a {
+    float: right;
+    text-align: left;
+    transition: 0.5s;
+    color: #f4f4f4 !important;
+}
+
+#nav-bar ul li a:hover {
+    color: #81cfc0 !important;
+}
+
+.navbar {
+    background: #fff;
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+.nav-link {
+    color: #555 !important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+/* The footer  */
+#footer {
+    background: #000;
+    height: 100px;
+    max-height: 100px;
+}
+
+.d-footer {
+    padding-top: 25px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    text-align: center;
+    font-family: cursive;
+    color: #f4f4f4;
+}
+
+#footer-tutorial {
+    color: #dc493a;
+}
+
+#noble-copyright {
+    font-family: sans-serif;
+}
