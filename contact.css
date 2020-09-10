@@ -61,6 +61,85 @@
 }
 
 
+
+/* The Carousel slider  */
+
+#headerSlider {
+    z-index: -20;
+    margin-bottom: 0;
+}
+
+.carousel {
+    margin-bottom: 0;
+}
+
+.carousel-inner>.bg-1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./images/Noble-2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    min-height: 500px;
+    /* z-index: -20; */
+}
+.carousel-inner>.bg-2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./images/books-on-shelf-in-library-256374.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    min-height: 500px;
+}
+
+.carousel-inner .theSlider {
+    text-align: center;
+    margin-bottom: 100px;
+    /* z-index: ; */
+}
+
+.carousel-inner .carousel-caption h3 {
+    font-size: 35px;
+    font-weight: lighter;
+    font-family: "Times New Roman", Times, serif;
+    padding-bottom: 15px;
+    color: #9c9990;
+}
+
+.carousel-inner .carousel-caption p {
+    letter-spacing: 1px;
+    font-family: monospace;
+    font-size: 1.3rem;
+    color: #9c9990;
+}
+
+/* styling of the form */
+
+#theBody .theForm input{
+    text-align: center;
+    width: 80%;
+    border-radius: 4px;
+    height: 40px;
+    border: 1px solid #b4b0b0;
+    font-family: cursive;
+    margin-bottom: 30px;
+}
+
+#theBody .theForm p{
+    margin-bottom: 8px;
+    text-transform: capitalize;
+    font-size: 12px;
+}
+
+#theBody .theForm input::placeholder{
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 12px;
+    font-family: cursive;
+}
 /* The footer  */
 #footer {
     background: #000;
