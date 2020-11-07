@@ -126,12 +126,18 @@
     border: 1px solid #b4b0b0;
     font-family: cursive;
     margin-bottom: 30px;
+    background: rgb(222, 218, 218);
+}
+
+#theBody .theForm input:focus{
+    outline: none;
 }
 
 #theBody .theForm p{
     margin-bottom: 8px;
     text-transform: capitalize;
     font-size: 12px;
+    font-weight: bolder;
 }
 
 #theBody .theForm input::placeholder{
@@ -140,11 +146,31 @@
     font-size: 12px;
     font-family: cursive;
 }
+
+.theSubmitbutton{
+    background: transparent !important;
+    color: #dc493a !important;
+    border: 1px solid #dc493a !important;
+    transition: all 0.3s ease-in;
+}
+
+.theSubmitbutton:hover{
+    background: #dc493a !important;
+    color: white !important;
+}
+
+.theSubmitbutton:focus{
+    box-shadow: none !important;
+}
+.theLink:hover{
+    background: transparent;
+    color: #dc493a;
+}
 /* The footer  */
 #footer {
-    background: #000;
-    height: 100px;
-    max-height: 100px;
+    background: #29524a;
+    /* height: 100px; */
+    /* max-height: 100px; */
 }
 
 .d-footer {
@@ -162,4 +188,33 @@
 
 #noble-copyright {
     font-family: sans-serif;
+}
+
+.theIcons p {
+    margin-bottom: 0px;
+}
+
+.theIcons a {
+    text-decoration: none;
+    color: rgb(255, 255, 255) !important;
+    transition: all 0.2s;
+    cursor: pointer;
+
+}
+
+.theIcons a:hover {
+    background: #73b9ab;
+    border-radius: 50%;
+}
+
+.theIcons .fa {
+    /* padding-top: 2px; */
+    /* height: 25px; */
+    /* position: absolute; */
+    width: 30px;
+    /* color: #dc493a; */
+    /* background: #fff !important; */
+    border-radius: 50%;
+
+
 }

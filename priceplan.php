@@ -29,10 +29,10 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
     "
     />
-    <link rel="stylesheet" href="../style/service.css" />
+    <link rel="stylesheet" href="price.css"/>
     <title>Document</title>
   </head>
-  <body>
+  <body onload="theSlider()">
     <section id="nav-bar">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -59,13 +59,13 @@
                 <a class="nav-link" href="news.html">NEWS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="services.html" id="current"
-                  >SERVICES</a
-                >
+                <a class="nav-link" href="services.html">SERVICES</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="priceplan.html">PRICE PLANS</a>
+                <a class="nav-link" href="priceplan.html" id="current"
+                  >PRICE PLANS</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="testimonial.html">TESTIMONIALS</a>
@@ -78,11 +78,29 @@
         </nav>
       </div>
     </section>
+    <section>
+        <div id="theChange" style="background-image: url(./images/books-on-shelf-in-library-256374.jpg); width: 100vh; height: 100vw; background-repeat: no-repeat; background-size: cover; background-position: center;">
+          This is another div with the intention of getting a new div
+
+        </div>
+    </section>
     <section id="footer">
       <div class="d-footer">
         <span id="footer-tutorial">Noble</span> Tutorial
         <span id="noble-copyright">copyright &copy; 2020</span>
       </div>
     </section>
+    <script>
+        let slideImg = document.getElementById('theChange')
+        let images = ['./images/books-on-shelf-in-library-256374.jpg', './images/Noble-1.jpg'  , './images/Noble-2.jpg']
+        let len = images.length
+        let i = 0 ;
+        function slider(){
+          if (i > (len-1)){
+            i=0;
+          }
+          slideImg
+        }
+    </script>
   </body>
 </html>

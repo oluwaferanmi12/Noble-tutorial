@@ -8,12 +8,13 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
+      />
+      <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+      ></script>
+    
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -116,29 +117,44 @@
         <div class="row">
 
           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" style="margin-left: 28px;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253209.6655746852!2d3.76409255639228!3d7.420792916398779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10398d77eeff086f%3A0x3b33e0f76e8e04a9!2sIbadan!5e0!3m2!1sen!2sng!4v1599692421677!5m2!1sen!2sng" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.401908813221!2d3.907971514483806!3d7.531067594568296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1039ef0be162d14d%3A0x301513cb0e4b8cf9!2sMoniya%20Police%20Station!5e0!3m2!1sen!2sng!4v1600862528884!5m2!1sen!2sng" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
 
 
           <div class="col-lg-6 col-md-6 col-sm-6 theForm" style="text-align:center; padding-top: 30px; padding-bottom: 30px;">
-              <form action="GET">
+              <h4 class='sent-notification'><h4/>
+              <form id = 'myForm' action="POST">
                 <p>name</p>
-                <input type="text" placeholder="Enter your name">
+                <input id='name' type="text" placeholder="Example: Ciroma Chuckwuma" autofocus required>
                 <p>Email</p>
-                <input type="email" placeholder ='Enter email'>
+                <input id = 'email' type="email" placeholder ='you@example.com required'>
+                <p>Number</p>
+                <input id ='number' type="text" placeholder="Max of 11 digits" required>
                 <p>message us</p>
-                <input type="text" style="height:120px">
+                <textarea id ='body' style="width: 80%;border: 1px solid #b4b0b0; border-radius: 4px; margin-bottom: 20px;" rows= '5'></textarea>
+                <a href="#" class="theLink"><button type='button'  class="btn btn-warning theSubmitbutton" style="width: 60%;  border: none; font-weight: bold;  font-size: 20px; font-family: 'Courier New', Courier, monospace;" type="button" value='Send an Email'>Send Message</button></a>
               </form>
-              <a href="#"><button class="btn btn-warning" style="width: 60%;" type="button">Send Message</button></a>
           </div>
         </div>
 
     </section>
-    <section id="footer">
+        <section id="footer">
       <div class="d-footer">
         <span id="footer-tutorial">Noble</span> Tutorial
         <span id="noble-copyright">copyright &copy; 2020</span>
+        <div class="theIcons" style="text-align: center">
+
+          <p>Contact us:</p>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class = "fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-whatsapp"></i></a>
+          
+          <div style="font-size: 12px; font-family: 'Times New Roman', Times, serif;letter-spacing: 0.04em; padding-bottom: 20px;">tel:08069845070</div>
+
+        </
       </div>
     </section>
+    
+    
   </body>
 </html>

@@ -7,6 +7,7 @@ body {
 }
 #nav-bar #navbarNav .navbar-nav .nav-item #current {
   color: #73b9ab !important;
+  
 }
 /* -=========Styling of the Navbar====----- */
 #nav-bar {
@@ -101,12 +102,14 @@ body {
   font-family: "Times New Roman", Times, serif;
   padding-bottom: 15px;
   color: #9c9990;
+
 }
 .carousel-inner .carousel-caption p {
   letter-spacing: 1px;
   font-family: monospace;
   font-size: 1.3rem;
   color: #9c9990;
+  /* position: static; */
 }
 .carousel-inner > .bg-2 {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -305,24 +308,29 @@ body {
 .carousel-inner .news-1 {
   height: 358px;
   background-color: #f2fafa;
+  z-index: -1000;
   
 }
 .carousel-inner .news-1 .carousel-caption .p{
   color: #000;
+  z-index: -1000;
 }
 .carousel-inner .news-2 {
   height: 358px;
   background-color: #f2fafa;
+  z-index: -1000;
   
 }
 .carousel-inner .news-3 {
   height: 358px;
   color:#000;
   background-color: #f2fafa;
+  z-index: -1000;
 
 }
 .carousel-inner .carousel-caption h2 {
   color: black;
+  z-index: -1000;
 }
 
 .carousel-inner .carousel-item .news p{
@@ -336,9 +344,9 @@ body {
 
 /* -----------FOOTER-------- */
 #footer {
-  background: #000;
-  height: 100px;
-  max-height: 100px;
+  background: #29524a;
+  /* height: 100px; */
+  /* max-height: 100px; */
 }
 
 .d-footer {
@@ -356,5 +364,33 @@ body {
 
 #noble-copyright {
   font-family: sans-serif;
+}
+
+.theIcons p{
+  margin-bottom: 0px;
+}
+
+.theIcons a{
+  text-decoration: none;
+  color: rgb(255, 255, 255) !important;
+  transition: all 0.2s;
+  cursor: pointer;
+  
+}
+.theIcons a:hover{
+  background:#73b9ab;
+  border-radius: 50%;
+}
+
+.theIcons .fa{
+  /* padding-top: 2px; */
+  /* height: 25px; */
+  /* position: absolute; */
+  width: 30px;
+  /* color: #dc493a; */
+  /* background: #fff !important; */
+  border-radius: 50%;
+
+
 }
 

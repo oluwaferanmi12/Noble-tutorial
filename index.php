@@ -60,20 +60,20 @@
                 <a class="nav-link" href="#" id="current">HOME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="news.html">NEWS</a>
+                <a class="nav-link" href="news.php">NEWS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="services.html">SERVICES</a>
+                <a class="nav-link" href="services.php">SERVICES</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="priceplan.html">PRICE PLANS</a>
+                <a class="nav-link" href="priceplan.php">PRICE PLANS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="testimonial.html">TESTIMONIALS</a>
+                <a class="nav-link" href="testimonial.php">TESTIMONIALS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contactus.html">CONTACT US</a>
+                <a class="nav-link" href="contactus.php">CONTACT US</a>
               </li>
             </ul>
           </div>
@@ -288,6 +288,16 @@
       <div class="d-footer">
         <span id="footer-tutorial">Noble</span> Tutorial
         <span id="noble-copyright">copyright &copy; 2020</span>
+        <div class="theIcons" style="text-align: center">
+
+          <p>Contact us:</p>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class = "fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-whatsapp"></i></a>
+          
+          <div style="font-size: 12px; font-family: 'Times New Roman', Times, serif;letter-spacing: 0.04em; padding-bottom: 20px;">tel:08069845070</div>
+
+        </
       </div>
     </section>
   </body>

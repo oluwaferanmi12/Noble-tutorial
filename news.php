@@ -85,6 +85,7 @@
         <div class = "col-md-4 col-lg-4 col-sm-12" style = "background-color : green">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia molestias neque in beatae cum dolorum modi. Sit explicabo exercitationem quidem fugit distinctio totam quod expedita quos fuga aperiam! Facere repellat, tempore aspernatur harum officiis beatae ipsam repellendus nostrum ipsum. Modi quam quisquam facilis distinctio omnis similique doloribus aut quae dolore dicta rem, laborum, corporis doloremque illo accusamus, voluptatum rerum exercitationem veritatis. Aspernatur, cumque porro at esse culpa veniam, quidem illo dolor nostrum quasi recusandae repudiandae ea, nemo commodi sapiente voluptates nam magnam provident. Recusandae minima repudiandae quia laborum consequatur obcaecati voluptates nemo doloribus. A explicabo accusamus ea, labore cupiditate nam!
         </div> 
+        
       </div>
     </section>
     <section id="footer">

@@ -29,15 +29,15 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
     "
     />
-    <link rel="stylesheet" href="../style/price.css"/>
+    <link rel="stylesheet" href=" service.css" />
     <title>Document</title>
   </head>
   <body>
     <section id="nav-bar">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" href="#"
-            >Noble <span id="side-head">Tutorial</span></a
+          <p class="navbar-brand" 
+            >Noble <span id="side-head">Tutorial</span></p
           >
           <button
             class="navbar-toggler"
@@ -53,7 +53,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">HOME</a>
+                <a class="nav-link" href="#" id="current">HOME</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="news.html">NEWS</a>
@@ -63,9 +63,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="priceplan.html" id="current"
-                  >PRICE PLANS</a
-                >
+                <a class="nav-link" href="priceplan.html">PRICE PLANS</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="testimonial.html">TESTIMONIALS</a>
@@ -78,10 +76,20 @@
         </nav>
       </div>
     </section>
-    <section id="footer">
+        <section id="footer">
       <div class="d-footer">
         <span id="footer-tutorial">Noble</span> Tutorial
         <span id="noble-copyright">copyright &copy; 2020</span>
+        <div class="theIcons" style="text-align: center">
+
+          <p>Contact us:</p>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class = "fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-whatsapp"></i></a>
+          
+          <div style="font-size: 12px; font-family: 'Times New Roman', Times, serif;letter-spacing: 0.04em; padding-bottom: 20px;">tel:08069845070</div>
+
+        </
       </div>
     </section>
   </body>

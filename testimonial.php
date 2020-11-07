@@ -84,5 +84,11 @@
         <span id="noble-copyright">copyright &copy; 2020</span>
       </div>
     </section>
+    <section>
+      <div class="jumbotron">
+        This is a jumbotron
+      </div>
+      <button class="btn btn-danger" style="background-color: blue;">Please submit</button>
+    </section>
   </body>
 </html>
