@@ -1,3 +1,32 @@
+<?php include('session.php');?>
+<?php 
+    if(isset($_POST['submit'])){
+    $Name = $_POST['name'];
+    $Email = $_POST['email'];
+    $Number = $_POST['number'];
+    $TextArea = $_POST['textarea'];
+    if (empty($Name) && empty($Email) && empty($Number) && empty($TextArea)){
+      $_SESSION['ErrorMessage'] = "All Fields Are Required";
+    }
+    else if (empty($Name) || empty($Email) || empty($Number) || empty($TextArea)){
+      if (empty($Name)){
+        $_SESSION['NameE'] = "Name is Required";
+
+      }
+      if (empty($Number)){
+        $_SESSION['NumberE'] = "Number is Required";
+      }
+      if (empty($Email)){
+        $_SESSION['EmailE'] = "Email is Required";
+      }
+
+      if (empty($TextArea)){
+        $_SESSION['TextE'] = "A Message is Required";
+      }
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,7 +59,7 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
     "
     />
-    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="newcontact.css"/>
     <title>Document</title>
   </head>
   <body>
@@ -54,22 +83,23 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">HOME</a>
+                <a class="nav-link" href="index.php">HOME</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="news.php">NEWS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="news.html">NEWS</a>
+                <a class="nav-link" href="services.php">SERVICES</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="services.html">SERVICES</a>
+                <a class="nav-link" href="priceplan.php">PRICE PLANS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="priceplan.html">PRICE PLANS</a>
+                <a class="nav-link" href="testimonial.php">TESTIMONIALS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="testimonial.html">TESTIMONIALS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contactus.html" id="current"
+                <a class="nav-link" href="contactus.php" id="current"
                   >CONTACT US</a
                 >
               </li>
@@ -123,16 +153,21 @@
 
           <div class="col-lg-6 col-md-6 col-sm-6 theForm" style="text-align:center; padding-top: 30px; padding-bottom: 30px;">
               <h4 class='sent-notification'><h4/>
-              <form id = 'myForm' action="POST">
+              <form id = 'myForm' action="contactus.php" method= "POST">
+                <?php echo message(); ?>
+                <?php echo ErrorName()?>
                 <p>name</p>
-                <input id='name' type="text" placeholder="Example: Ciroma Chuckwuma" autofocus required>
+                <input id='name' type="text" placeholder="Example: Ciroma Chuckwuma" name = 'name' >
+                <?php echo EmailError()?>
                 <p>Email</p>
-                <input id = 'email' type="email" placeholder ='you@example.com required'>
+                <input id = 'email' type="email" placeholder ='you@example.com' name='email' >
+                <?php echo ErrorNumber()?>
                 <p>Number</p>
-                <input id ='number' type="text" placeholder="Max of 11 digits" required>
+                <input id ='number' type="text" placeholder="Max of 11 digits" name='number'>
+                <?php echo ErrorText()?>
                 <p>message us</p>
-                <textarea id ='body' style="width: 80%;border: 1px solid #b4b0b0; border-radius: 4px; margin-bottom: 20px;" rows= '5'></textarea>
-                <a href="#" class="theLink"><button type='button'  class="btn btn-warning theSubmitbutton" style="width: 60%;  border: none; font-weight: bold;  font-size: 20px; font-family: 'Courier New', Courier, monospace;" type="button" value='Send an Email'>Send Message</button></a>
+                <textarea id ='body' style="width: 80%;border: 1px solid #b4b0b0; border-radius: 4px; margin-bottom: 20px; padding: 10px; font-size:16px" rows= '5' name='textarea'></textarea>
+                <a href="#" class="theLink"><input type='submit'  class="btn btn-warning theSubmitbutton" style="width: 60%;  border: none; font-weight: bold;  font-size: 20px; font-family: 'Courier New', Courier, monospace; text-align:center; padding: 0px;"  value='Send an Email' name = 'submit'></input></a>
               </form>
           </div>
         </div>
