@@ -34,7 +34,7 @@
     "
     />
     <link href="https://fonts.googleapis.com/css2?family=Tittilium + Web" rel="stylesheet">
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="newindex.css?v=<?php echo time(); ?>"/>
   </head>
   <body>
     <section id="nav-bar">

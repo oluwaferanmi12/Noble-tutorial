@@ -2,7 +2,7 @@
     session_start();
     function message(){
         if (isset($_SESSION['ErrorMessage'])){
-            $output = "<div style = 'background:#F3B3A6; width:80%; margin:auto; height:36px; margin-bottom:10px; border-radius:8px; font-size:16px; padding-top:10px;'>{$_SESSION['ErrorMessage']}</div>";
+            $output = "<div style = 'background:#F3B3A6; width:80%; margin:auto; height:36px; margin-bottom:10px; border-radius:8px; font-size:16px; padding-top:6px; font-weight:bolder; text-align:center;margin-top:10px'>{$_SESSION['ErrorMessage']}</div>";
             $_SESSION['ErrorMessage'] = null ;
             return $output;
         }
@@ -35,6 +35,14 @@
         if (isset($_SESSION['TextE'])){
             $output = "<div style = 'background:#F3B3A6; width:80%; margin:auto; height:36px; margin-bottom:10px; border-radius:8px; font-size:16px; padding-top:10px;'>{$_SESSION['TextE']}</div>";
             $_SESSION['TextE'] = null ;
+            return $output;
+        }
+    }
+
+    function Success(){
+        if (isset($_SESSION['SuccessMessage'])){
+            $output = "<div style = 'background:#B3F2DD; width:80%; margin:auto; height:40px; margin-bottom:10px; border-radius:8px; font-size:16px; padding-top:10px; text-align:center; font-weight:bolder; width:80%; margin-top:10px'>{$_SESSION['SuccessMessage']}</div>";
+            $_SESSION['SuccessMessage'] = null ;
             return $output;
         }
     }

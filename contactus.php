@@ -108,45 +108,12 @@
         </nav>
       </div>
     </section>
-    <section id= 'slider'>
-      <div id="headerSlider" class="carousel slide theFirstSlider" data-ride='carousel'>
 
-        <ol class="carousel-indicators">
-          <li data-target="#headerSlider" data-slide-to = '0' class="active"></li>
-          <li data-target="#headerSlider" data-slide-to = '1' ></li>
-          <!-- <li data-target="#headerSlider" data-slide-to = '2'></li> -->
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active bg-1">
-            <div class="carousel-caption theSlider bgc-1">
-              <h3 style = 'font-size : 50px'> deliver result with confidence</h3>
-              <p style = 'font-size : 1.5rem'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam
-                dicta, officiis saepe nostrum dolores porro nemo iure voluptate
-                temporibus laborum?
-              </p>
-            </div>
-          </div>
-          <div class="carousel-item bg-2">
-            <div class="carousel-caption theSlider bgc-2">
-              <h3 style = 'font-size : 50px'>We deliver result with confidence</h3>
-              <p style = 'font-size : 1.5rem'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam
-                dicta, officiis saepe nostrum dolores porro nemo iure voluptate
-                temporibus laborum?
-              </p>
-            </div>
-          </div>
 
-        </div>
-      </div>
-
-    </section>
-
-    <section id="theBody">
+    <section id="theBody" style='overflow: hidden;'>
         <div class="row">
 
-          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" style="margin-left: 28px;">
+          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" style="margin-left: 28px; margin-top:20px; margin-bottom: 20px;">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.401908813221!2d3.907971514483806!3d7.531067594568296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1039ef0be162d14d%3A0x301513cb0e4b8cf9!2sMoniya%20Police%20Station!5e0!3m2!1sen!2sng!4v1600862528884!5m2!1sen!2sng" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
 

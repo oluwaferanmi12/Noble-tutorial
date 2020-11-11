@@ -1,0 +1,82 @@
+#Header {
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    background-color: #29524a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#Header h3 {
+    font-size: 40px;
+    color: #e53420;
+    font-family: cursive;
+    margin: 0px;
+}
+
+.tableData{
+    border-right: 0.1px solid #d5d5dc;
+}
+
+.searchInput{
+    height: 40px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    padding-left: 15px;
+    font-family: monospace;
+    border: none;
+    width: 70%;
+}
+
+.searchInput::placeholder{
+    font-size: 18px;
+    /* padding-left: 15px; */
+}
+
+.searchInput:focus{
+    outline: none;
+    border: 1px solid #bdc8c6;
+    
+}
+
+.submitInput{
+    border: none;
+    font-size: 20px;
+    font-family: monospace;
+    padding: 0px 12px;
+    border: 1px solid #bdc8c6;
+    border-radius: 4px;
+}
+input:focus{
+    border: 1px solid #bdc8c6;
+}
+input{
+    border: 1px solid #bdc8c6;
+}
+
+
+.theLink{
+    text-decoration: none !important;
+    width: 100% !important;
+    color: black;
+    font-family: monospace;
+    text-transform: none !important;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.theLink:hover{
+    color: black;
+}
+
+.theTableData{
+    background-color: #2DE1C2;
+    border-radius: 10px;
+    
+}
+
+.theTableData1{
+    background-color: #FF3C38;
+    border-radius: 10px;
+    
+}

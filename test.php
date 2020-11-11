@@ -1,33 +1,9 @@
-<?php 
-    function Message(){
-        if (''){
-            return "Testing";
-        }
-
-        if ('b'){
-            return "Another Testing";
-        }
-
-    }
-
-    echo Message();
-
-    function AnotherMessage(){
-        if ('a'){
-            return 'aflajdflakj';
-        }
-    }
-
-    echo AnotherMessage();
-    echo AnotherMessage();
-    echo AnotherMessage();
-    echo AnotherMessage();
-
-
-
+<?php
+    $a= 5;
     
-?>
-
-<?php 
-    echo AnotherMessage();
+    while($a){
+        $name = "oluwaferanmi";
+        $a = $a -1;
+    }
+    echo "$name";
 ?>
