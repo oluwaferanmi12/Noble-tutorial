@@ -1,7 +1,10 @@
 <?php include ('session.php') ?>
+<?php include ('connection.php') ?>
+<?php include('functions.php') ?>
+<?php confirm_login() ?>
 <?php 
     $update_id = @$_GET['id'];
-    $connection = mysqli_connect('localhost' , 'root' , '' , 'noble');
+    
     $query = "SELECT * FROM payment_record WHERE id = '$update_id'";
     $execute = mysqli_query($connection , $query);
     $row = mysqli_fetch_array($execute);
@@ -41,7 +44,7 @@
     href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
     "
     />
-    <link rel="stylesheet" href="./insertPayment.css">
+    <link rel="stylesheet" href="newveiwstudent.css?v=<?php echo time() ?>">
 
     
 </head>
@@ -54,7 +57,7 @@
     </div>
     <div style='text-align:center;font-weight:bold;font-size:24px; margin-bottom: 20px'>Payment Form</div>
 
-    <section>
+    <section id ='insertPayment'>
         <form action="paymentUpdate.php?theId=<?php echo $update_id ;?>" method="POST" class='theForm'>
             <?php echo message() ;?>
             
@@ -78,20 +81,26 @@
 <?php 
     if (isset($_POST['submit'])){
         $id = $_GET['theId'];
+        
+        $query = "SELECT * FROM payment_record WHERE id = '$id'";
+        $execute = mysqli_query($connection  , $query);
+        $row = mysqli_fetch_array($execute);
+        $total = $row['Total_paid'];
         $name = $_POST['name'];
         $amount = $_POST['amount'];
         $expiry = $_POST['expire'];
         $dept = $_POST['dept'];
-        if ($amount < 5000){
-            $balance = 5000 - $amount;
+        $total = $total + $amount;
+        if ($total < 5000){
+            $balance = 5000 - $total;
         }
-        else if($balance = 5000){
+        else if($total = 5000){
             $balance = 'Paid';
         }
         $currentTime = time();
         $dateTime = strftime("%B-%d-%Y @ %H:%M:%S" , $currentTime);
-        $connection = mysqli_connect('localhost' , 'root' , '' , 'noble');
-        $query = "UPDATE payment_record SET name='$name' ,amount='$amount', department='$dept' ,balance = '$balance' ,expiry= '$expiry', date ='$dateTime' WHERE id = '$id' ";
+        
+        $query = "UPDATE payment_record SET name='$name' ,amount='$amount', department='$dept' ,balance = '$balance' ,expiry= '$expiry', date ='$dateTime', Total_paid='$total'  WHERE id = '$id' ";
         $execute = mysqli_query($connection , $query);
         if ($execute){
             $_SESSION['SuccessMessage'] = "Updated Successfully";

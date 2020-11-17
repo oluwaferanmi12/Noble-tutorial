@@ -1,21 +1,21 @@
-<?php include('session.php'); ?> 
-<?php include ('connection.php') ?>
+<?php include('session.php'); ?>
 <?php include('functions.php') ?>
-
+<?php include ('connection.php') ?>
 <?php confirm_login() ?>
 <?php 
     
     if(isset($_POST['yes'])){
         $delete_id = $_GET['delete_id'];
-        $query = "DELETE FROM payment_record WHERE ID= '$delete_id'";
+        
+        $query = "DELETE FROM student_record WHERE ID= '$delete_id'";
         $execute = mysqli_query($connection , $query);
         if ($execute){
             $_SESSION['SuccessMessage'] = "Deleted Successfully";
-            header('location:paymentRecord.php');
+            header('location:editStudent.php');
     }
 }
         if (isset($_POST['no'])){
-            header('location:paymentRecord.php');
+            header('location:editStudent.php');
         }
 ?>
 
@@ -56,7 +56,7 @@
 </head>
 <body style='background:#E0EFDE;'>
     <div style= "text-align:center;margin-top:50px">
-        <form action="paymentDelete.php?delete_id=<?php echo $_GET['id']; ?>" method= "POST">
+        <form action="studentDelete.php?delete_id=<?php echo $_GET['id']; ?>" method= "POST">
             <p style='font-weight: bolder; font-size:20px'>Are You Sure You Want To Delete?</p>
             <input style="padding:10px 50px; font-size:18px; background: #ff3c38; border:none; border-radius:8px; font-weight:bold;" type="submit" value='Yes' name='yes'>
             

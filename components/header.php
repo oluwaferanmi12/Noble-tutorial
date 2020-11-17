@@ -1,23 +1,8 @@
-<?php include('session.php'); ?> 
+<?php include ('session.php');?>
 <?php include ('connection.php') ?>
 <?php include('functions.php') ?>
-
 <?php confirm_login() ?>
-<?php 
-    
-    if(isset($_POST['yes'])){
-        $delete_id = $_GET['delete_id'];
-        $query = "DELETE FROM payment_record WHERE ID= '$delete_id'";
-        $execute = mysqli_query($connection , $query);
-        if ($execute){
-            $_SESSION['SuccessMessage'] = "Deleted Successfully";
-            header('location:paymentRecord.php');
-    }
-}
-        if (isset($_POST['no'])){
-            header('location:paymentRecord.php');
-        }
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,17 +36,13 @@
         href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
     "
     />
-    <link rel="stylesheet" href=""/>
+    <link rel="stylesheet" href="newveiwstudent.css?v=<?php echo time(); ?>"/>
     <title>Document</title>
 </head>
-<body style='background:#E0EFDE;'>
-    <div style= "text-align:center;margin-top:50px">
-        <form action="paymentDelete.php?delete_id=<?php echo $_GET['id']; ?>" method= "POST">
-            <p style='font-weight: bolder; font-size:20px'>Are You Sure You Want To Delete?</p>
-            <input style="padding:10px 50px; font-size:18px; background: #ff3c38; border:none; border-radius:8px; font-weight:bold;" type="submit" value='Yes' name='yes'>
-            
-            <input style="padding:10px 50px; font-size:18px; background:#2de1c2; font-weight:bold; border:none; border-radius:8px;" type="submit" value ='No' name='no'>
-        </form>
+<body>
+    <div id = 'Header'>
+        <div style = " height: 100%; padding-top: 20px;"><h3> <span style= "color:#fff; font-family: Helvetica" >Noble</span> Tutorial Class</h3>
+        <p></p>
+        <p style= "color: #fff; margin-top:8px" >(We deliver result with confidence)</p>
+        </div>
     </div>
-</body>
-</html>

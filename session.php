@@ -47,6 +47,14 @@
         }
     }
 
+    function User(){
+        if (isset($_SESSION['User_id'])){
+            $output =$_SESSION['User_id'];
+            // $_SESSION ['User_id'] = null ;
+            return $output ;
+        }
+    }
+    
 
     
 ?>

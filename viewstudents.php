@@ -1,6 +1,9 @@
 <?php 
     include ('session.php');
 ?>
+<?php include ('connection.php') ?>
+<?php include('functions.php') ?>
+<?php confirm_login() ?>
 
 
 
@@ -85,7 +88,7 @@
         </thead>
         <tbody>
             <?php
-                $Connection = mysqli_connect ('localhost' , 'root' , '' , 'noble');
+                
                 if (isset($_POST['submit'])){
                     $search = $_POST['search'];
                     $Query = "SELECT * FROM student_record WHERE name LIKE '%$search%' OR email LIKE '%$search%' ORDER BY id DESC";
@@ -98,7 +101,7 @@
                     $Query = "SELECT * FROM student_record ORDER BY id DESC";
                 }
                 
-                $Execute = mysqli_query($Connection , $Query);
+                $Execute = mysqli_query($connection , $Query);
                 $No = 0;
                 $theList = array();
                 
@@ -130,7 +133,6 @@
                 <td class='tableData'><?php echo $Department ;?></td>
                 <td class='tableData'><?php echo $Subject ;?></td>
                 <td class='tableData'><?php echo $Email ;?></td>
-                
             </tr>
             
         </tbody>

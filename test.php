@@ -1,9 +1,2 @@
-<?php
-    $a= 5;
-    
-    while($a){
-        $name = "oluwaferanmi";
-        $a = $a -1;
-    }
-    echo "$name";
-?>
+<?php include ('session.php') ?>
+<?php include ('functions.php') ?>
