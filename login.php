@@ -79,7 +79,7 @@
         <div style= "width:90%; display:flex; min-height:40vh justify-content:center; align-items:center; background-color:white; margin-top:75px; border-radius:10px; margin:auto;  "> 
     
 
-            <form action="login.php" method= 'POST'  style='width:60%; margin:auto; text-align:center; display:flex; flex-direction:column;  margin-top:50px; ' class='login-form'>
+            <form action="login.php" method= 'POST'  style='width:70%; margin:auto; text-align:center; display:flex; flex-direction:column;  margin-top:50px; ' class='login-form'>
                 <p class='theP'>Email</p>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
