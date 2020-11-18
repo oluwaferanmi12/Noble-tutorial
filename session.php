@@ -54,6 +54,13 @@
             return $output ;
         }
     }
+
+    function Admin(){
+        if (isset($_SESSION['Admin_id'])){
+            $output = $_SESSION['Admin_id'];
+            return $output;
+        }
+    }
     
 
     

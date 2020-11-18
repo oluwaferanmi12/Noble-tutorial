@@ -11,6 +11,22 @@
             header("Location:login.php");
         }
     }
+
+    function admin_login(){
+        if (isset($_SESSION['Admin_id'])){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    function confirm_admin_login(){
+        if(!admin_login()){
+            header('Location:Login.php');
+        }
+    }
+
     
 
 ?>

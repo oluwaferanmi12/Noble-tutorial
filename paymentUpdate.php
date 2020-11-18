@@ -15,7 +15,7 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>    
+        <title>PaymentUpdate</title>    
         <link
         rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -66,7 +66,7 @@
             <p>Department</p>
             <input type="text" name= "dept" value="<?php echo  $row['department']; ?>">
             <p>Amount Paid</p>
-            <input type="text" name= "amount" value="<?php echo  $row['amount']; ?>">
+            <input type="text" name= "amount" value="0">
 
             <p>Expiry Date</p>
             <input type="text" name= "expire" value="<?php echo  $row['expiry'];  ?>">
@@ -81,25 +81,32 @@
 <?php 
     if (isset($_POST['submit'])){
         $id = $_GET['theId'];
-        
+        $currentTime = time() ;
+        $dateTime = strftime("%B-%d-%Y" , $currentTime);
         $query = "SELECT * FROM payment_record WHERE id = '$id'";
         $execute = mysqli_query($connection  , $query);
         $row = mysqli_fetch_array($execute);
         $total = $row['Total_paid'];
+        $date = $row['date'];
+        $database_amount = $row['amount'];
         $name = $_POST['name'];
         $amount = $_POST['amount'];
         $expiry = $_POST['expire'];
         $dept = $_POST['dept'];
+        
         $total = $total + $amount;
+        if($date == $dateTime){
+            $amount = $amount + $database_amount ;
+        }
+        else{
+            $amount=$_POST['amount'];
+        }
         if ($total < 5000){
             $balance = 5000 - $total;
         }
         else if($total = 5000){
             $balance = 'Paid';
         }
-        $currentTime = time();
-        $dateTime = strftime("%B-%d-%Y @ %H:%M:%S" , $currentTime);
-        
         $query = "UPDATE payment_record SET name='$name' ,amount='$amount', department='$dept' ,balance = '$balance' ,expiry= '$expiry', date ='$dateTime', Total_paid='$total'  WHERE id = '$id' ";
         $execute = mysqli_query($connection , $query);
         if ($execute){

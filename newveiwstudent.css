@@ -297,6 +297,7 @@ input{
 
     .login-form{
         width:80% !important;
+        margin-bottom: 30px !important;;
     }
     .input-field{
         width:100%;

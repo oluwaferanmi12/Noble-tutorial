@@ -10,15 +10,22 @@
 
         }
         else{
-            $query ="SELECT * FROM admin WHERE email='$email' AND password = '$password' ";
-            $execute = mysqli_query($connection , $query);
-            $row = mysqli_fetch_array($execute);
+            $query ="SELECT * FROM super_admin WHERE email = '$email' AND password= '$password'";
+            $execution = mysqli_query($connection, $query);
+            $row = mysqli_fetch_array($execution);
             if ($row){
                 $_SESSION['User_id'] = $row['id'];
+                $_SESSION['Admin_id'] = $row['id'];
                 header("Location:dashboard.php");
             }
             else{
-                $_SESSION['ErrorMessage'] = "Wrong Details Entered" ;
+                $query = "SELECT * FROM admin WHERE email = '$email' AND password = '$password'";
+                $execution = mysqli_query($connection , $query);
+                $row = mysqli_fetch_array($execution);
+                if ($row){
+                    $_SESSION['User_id'] = $row['id'];
+                    header("Location:OperatorDashboard.php");
+                }
             }
         }
         
@@ -30,7 +37,7 @@
 <head>
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>    
+        <title>Login</title>    
         <link
         rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -80,6 +87,7 @@
     
 
             <form action="login.php" method= 'POST'  style='width:70%; margin:auto; text-align:center; display:flex; flex-direction:column;  margin-top:50px; ' class='login-form'>
+                <div style='text-align:left; margin-bottom:10px; font-weight:bold;'>Welcome Back</div>
                 <p class='theP'>Email</p>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -94,7 +102,7 @@
                     </div>
                     <input type="password" name = 'password' class= 'form-control input-field' placeholder='Enter Password' aria-describedby='basic-addon'>
                 </div>
-                <div style='margin-bottom:95px; margin-top:0px;'><input style='width:100%; height:40px; border-radius:8px; color:white; font-weight:bold; background-color:#e53420;' type="submit" name= 'submit' class= 'theSubmit'> </div>
+                <div style='margin-bottom:60px; margin-top:0px;'><input style='width:100%; height:40px; border-radius:8px; color:white; font-weight:bold; background-color:#e53420;' type="submit" name= 'submit' class= 'theSubmit'> </div>
             </form>
         </div>
         </div>

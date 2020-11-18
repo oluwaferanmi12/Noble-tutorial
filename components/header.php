@@ -37,7 +37,7 @@
     "
     />
     <link rel="stylesheet" href="newveiwstudent.css?v=<?php echo time(); ?>"/>
-    <title>Document</title>
+    <title><?php echo $title ?></title>
 </head>
 <body>
     <div id = 'Header'>

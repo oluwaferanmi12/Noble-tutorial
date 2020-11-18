@@ -1,4 +1,4 @@
-
+<?php $title = 'RegisterStudent' ; ?>
 <?php include ('components/header.php'); ?>
 <?php 
     $nameError = '';

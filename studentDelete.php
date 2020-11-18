@@ -52,7 +52,7 @@
     "
     />
     <link rel="stylesheet" href=""/>
-    <title>Document</title>
+    <title>StudentDelete</title>
 </head>
 <body style='background:#E0EFDE;'>
     <div style= "text-align:center;margin-top:50px">

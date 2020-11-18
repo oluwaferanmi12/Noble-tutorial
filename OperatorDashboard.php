@@ -1,12 +1,7 @@
-
-<?php include('session.php');?>
-<?php include('functions.php') ?>
-<?php confirm_login() ?>
-<?php confirm_admin_login() ; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -37,89 +32,51 @@
     "
     />
     <link rel="stylesheet" href="newveiwstudent.css?v=<?php echo time(); ?>"/>
-    <title>Dashboard</title>
+    <title>OperatorDashboard</title>
+</head>
 </head>
 <body style='background: #E0EFDE; min-height:100vh;'>
-    <div id = 'Header' style='margin-bottom:50px;'>
+    <div id = 'Header' style='margin-bottom:100px;'>
         <div style = " height: 100%; padding-top: 20px;"><h3> <span style= "color:#fff; font-family: Helvetica" >Noble</span> Tutorial Class</h3>
         <p></p>
         <p style= "color: #fff; margin-top:8px" >(We deliver result with confidence)</p>
     </div>
-</div>
-    <?php echo success() ; ?>
-    <?php echo message() ; ?>
-    <div class= "body" style = "padding-left:50px; padding-right:50px; ">
-        <div class= 'row'>
-            <div class="col-lg-4">
+
+    <div class= "body" style = "padding-left:50px; padding-right:50px; margin-top:50px;">
+        <div class='row'>
+        <div class="col-lg-4">
                 <div class='theContent'>
                     <p>Register Students</p>
                     <i class = "fa fa-registered"></i>
                     <a href="RegisterStudent.php" target='_blank'><div class="theLinkDiv">Register</div></a>
                 </div>
-            </div>
-
-            <!-- Next Column -->
-            <div class="col-lg-4">
+        </div>
+        <!-- Next Column -->
+        <div class="col-lg-4">
                 <div class='theContent'>
                     <p>Veiw Student Record</p>
                     <i class="fa fa-eye"></i>
                     <a href="viewstudents.php"  target='_blank'><div class="theLinkDiv">Veiw</div>
                 </div></a>
+        </div>
+        <!-- Next Column -->
+        <div class="col-lg-4">
+            <div class='theContent'>
+                <p>Insert Payment</p>
+                <i class="fa fa-edit"></i>
+                <a href="operatorinsertPayment.php"  target='_blank'><div class="theLinkDiv">Insert</div></a>
             </div>
+        </div>
 
-            <!-- Next Column -->
-            <div class="col-lg-4">
-                <div class='theContent'>
-                    <p>Edit Student Record</p>
-                    <i class="fa fa-edit"></i>
-                    <a href="editStudent.php"  target='_blank'><div class="theLinkDiv">Edit</div>
-                </div></a>
-            </div>
-
-            <!-- Next Column -->
-            <div class="col-lg-4">
-                <div class='theContent'>
-                    <p>Insert Payment</p>
-                    <i class="fa fa-edit"></i>
-                    <a href="insertPayment.php"  target='_blank'><div class="theLinkDiv">Insert</div></a>
-                </div>
-            </div>
-
-            <!-- Next Column -->
+        <!-- Next Column -->
             <div class="col-lg-4">
                 <div class='theContent'>
                     <p>Payment Record</p>
                     <i class="fa fa-archive"></i>
-                    <a href="paymentRecord.php"  target='_blank'><div class="theLinkDiv">View</div></a>
+                    <a href="operatorPaymentRecord.php"  target='_blank'><div class="theLinkDiv">View</div></a>
                 </div>
             </div>
-            <!-- Next Column -->
-            <div class="col-lg-4">
-                <div class='theContent'>
-                    <p>Edit Payment</p>
-                    <i class="fa fa-edit"></i>
-                    <a href="adminEditPaymentRecord.php"  target='_blank'><div class="theLinkDiv">Edit</div></a>
-                </div>
-            </div>
-
-            <!-- Next Column -->
-            <div class="col-lg-4">
-                <div class='theContent'>
-                    <p>Get Payment for the Day</p>
-                    <i class="fa fa-get-pocket"></i>
-                    <a href="getPayment.php"  target='_blank'><div class="theLinkDiv">Get</div></a>
-                </div>
-            </div>
-
-            <!-- Next Column -->
-            <div class="col-lg-4">
-                <div class='theContent'>
-                    <p>Manage Access</p>
-                    <i class="fa fa-wheelchair"></i>
-                    <a href="#"  target='_blank'><div class="theLinkDiv">Manage</div></a>
-                </div>
-            </div>
-            <!-- Next Column -->
+        <!-- Next Column -->
             <div class="col-lg-4">
                 <div class='theContent'>
                     <p>Log Out</p>
@@ -127,12 +84,8 @@
                     <a href="#"  target='_blank'><div class="theLinkDiv">Log Out</div></a>
                 </div>
             </div>
-
-
-            
-        </div>
         
     </div>
-    
+    </div>
 </body>
 </html>

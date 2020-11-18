@@ -25,7 +25,9 @@
                 <th scope="col">Expiry</th>
                 <th scope="col">Most Recent <br> Payment</th>
                 <th scope = "col">Total Paid</th>
-                
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Reset</th>
 
 
                 
@@ -77,7 +79,9 @@
                 <td class='tableData'><?php echo $expiry ;?></td>
                 <td class='tableData'><?php echo $amount ;?></td>
                 <td class='tableData'><?php echo $Total ;?></td>
-                
+                <td class='tableData theTableData'><a class='theLink' href="paymentUpdate.php?id=<?php echo $id ;?>">Update</a></td>
+                <td class='tableData theTableData1'><a class='theLink' href="paymentDelete.php?id=<?php echo $id ;?>">Delete</a></td>
+                <td class='tableData theTableData2'><a class='theLink' href="paymentReset.php?id=<?php echo $id ;?>">Reset</a></td>
 
                 
                 

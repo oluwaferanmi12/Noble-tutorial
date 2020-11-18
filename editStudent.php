@@ -1,4 +1,6 @@
+<?php $title = 'EditStudent' ; ?>
 <?php @include('components/header.php') ?>
+<?php confirm_admin_login() ; ?>
 </div>
 <div><?php echo Success() ;?></div>
     <!-- The Search Button -->

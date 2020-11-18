@@ -1,6 +1,7 @@
 <?php include('functions.php') ?>
 <?php confirm_login() ?>
 <?php include ('connection.php') ?>
+<?php confirm_admin_login() ; ?>
 <?php 
     $currentTime = time();
     $theDate = strftime("%B-%d-%Y" , $currentTime);
@@ -49,7 +50,7 @@
     "
     />
     <link rel="stylesheet" href="newveiwstudent.css?v=<?php echo time(); ?>"/>
-    <title>Document</title>
+    <title>GetPayment</title>
 </head>
 </head>
 <body style= 'background-color:#E0EFDE; min-height:100vh'>
