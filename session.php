@@ -46,6 +46,13 @@
             return $output;
         }
     }
+    function confirm_success(){
+        if (isset($_SESSION['AdminSuccessMessage'])){
+            $output = "<div style = 'background:#B3F2DD; width:80%; margin:auto; height:40px; margin-bottom:10px; border-radius:8px; font-size:16px; padding-top:10px; text-align:center; font-weight:bolder; width:80%; margin-top:10px'>{$_SESSION['AdminSuccessMessage']}</div>";
+            $_SESSION['AdminSuccessMessage'] = null ;
+            return $output;
+        }
+    }
 
     function User(){
         if (isset($_SESSION['User_id'])){

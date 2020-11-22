@@ -16,6 +16,28 @@
     // echo $theTotalPayment;
 ?>
 
+<?php 
+    $query = "SELECT * FROM expenses WHERE date like '%$theDate%'";
+    $execution = mysqli_query($connection , $query);
+    $theExpenses= array();
+    while($row= mysqli_fetch_array($execution)){
+        $theAmount = $row['amount'];
+        array_push($theExpenses , $theAmount);
+    }
+
+    $theExpenses = array_sum($theExpenses);
+
+    $theBalance = $theTotalPayment - $theExpenses ;
+
+    if ($theBalance <= 0 ){
+        $color = 'red';
+        $theBalance = -($theBalance);
+    }
+    else{
+        $color = 'green';
+    }
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,11 +83,29 @@
         </div>
     </div>
 
-    <div style="width:40%; margin:auto; background:#ffffff; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:space-around; margin-top:50px; padding-top:20px; border-radius:10px; height:300px">
-        <p style='font-size:24px; font-weight:bold; '>Total Amount For <?php echo $theDate; ?> </p>
-        
-        <p style='font-weight:bold; font-size:20px; '><?php echo $theTotalPayment; ?></p>
+    <div class='row'>
+        <div class='offset-lg-1 col-lg-5 getPaymentImg' >
+            <img src="./svg/undraw_wallet_aym5.svg" alt="">
+        </div>
+        <div class='col-lg-5'>
+            <div style="width:80%; margin:auto; background:#ffffff; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:space-around; margin-top:20px; padding-top:20px; border-radius:10px; ">
+            
+            <p style='font-size:24px; font-weight:bold; font-family:monospace; padding-right:10px ; padding-left:10px; '>Total Amount For <?php echo $theDate; ?> </p>
+            <hr style="width:95%;text-align:left;margin-left:0">
+            <div style='font-weight:500; font-family:monospace; font-size:16px;'>Credit</div>
+            <p style='font-weight:bold; font-size:40px; color:green; '><?php echo $theTotalPayment; ?></p>
+            <hr style="width:95%;text-align:left;margin-left:0">
+            <div>Debit</div>
+            <p style= 'font-weight:bold; font-size:40px; color:red;'> <?php echo $theExpenses; ?></p>
+            <hr style="width:95%;text-align:left;margin-left:0">
+            <div>Balance</div>
+            <p style='font-weight:bold; font-size:40px; color: <?php echo $color ?>'> <?php echo $theBalance ?></p>
+            <hr style="width:95%;text-align:left;margin-left:0">
+            </div>
+        </div>
+
     </div>
+
     
 </body>
 </html>

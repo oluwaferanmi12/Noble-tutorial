@@ -23,7 +23,7 @@
 
     function confirm_admin_login(){
         if(!admin_login()){
-            header('Location:Login.php');
+            header('Location:login.php');
         }
     }
 

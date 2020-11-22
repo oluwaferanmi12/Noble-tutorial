@@ -195,11 +195,11 @@
     <div>
         
     </div>
-    <div class="row theRow" style="background-color:  #f8f4f4;" >
+    <div class="row theRow" style="background-color:  #f8f4f4; margin-bottom :50px; " >
         <div class="offset-lg-1 col-lg-10 theFirstCol">
             <div >
                 <form action="studentUpdate.php?id=<?php echo $student_id?>" method="POST" class="theForm">
-                    <div class="row" style="padding-top: 35px;">
+                    <div class="row" style="padding-top: 35px; padding-bottom:40px; margin-bottom:50px;">
                         <div class="col-lg-12" style="text-align: center; margin-bottom: 30px; font-size: 24px; font-weight: bolder; text-decoration: underline; letter-spacing: 0.04em;">Update <?php echo $name?>'s Record </div>
                         <div class="offset-1 col-lg-5" >
                             <p>Name</p>
@@ -243,7 +243,7 @@
                             <p>Email Address</p>
                             <input type="text" name="email" value = '<?php echo $email; ?>'>
                             <div style='color: red; font-size: 12px;'><?php echo $emailError;?></div>
-                            <input name = submit class="Submit" type="submit" value="Update" style="margin-top: 22px; background-color: #ed5f4f; width: 80%; margin-left: auto; display: block; margin-right: auto; color: black; font-weight: bold;letter-spacing: 0.04em; font-size: 20px;">
+                            <input name = submit class="Submit" type="submit" value="Update" style="margin-top: 22px; background-color: #ed5f4f; width: 80%; margin-left: auto; display: block; margin-right: auto; color: black; font-weight: bold;letter-spacing: 0.04em; font-size: 20px; margin-top:40px">
                             
                         </div>
                     </div>

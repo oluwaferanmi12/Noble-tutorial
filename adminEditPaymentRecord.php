@@ -8,12 +8,13 @@
     
     <section style= 'padding:10px; background: #E0EFDE; min-height: 100vh;'>
     <div >
-        <form action="paymentRecord.php" method="POST" style='float:right; margin-bottom:20px '>
+        <form action="paymentRecord.php" method="POST" style='text-align:right; margin-bottom:20px '>
             <input type="text" name='search' placeholder='Search by name' style='height:40px; padding:10px; border-radius:10px;'>
             <input type="submit" name = "submit" style='height:40px; border-radius:10px; padding:0px 10px; font-weight:bold;'>
         </form>
     </div>
-        <table class="table table-hover ">
+        <div class='responsive-table'>
+            <table class="table table-hover ">
     <thead>
         <tr style='text-align:center;font-size:18px;'>
                 <th scope="col">id</th>
@@ -79,9 +80,9 @@
                 <td class='tableData'><?php echo $expiry ;?></td>
                 <td class='tableData'><?php echo $amount ;?></td>
                 <td class='tableData'><?php echo $Total ;?></td>
-                <td class='tableData theTableData'><a class='theLink' href="paymentUpdate.php?id=<?php echo $id ;?>">Update</a></td>
-                <td class='tableData theTableData1'><a class='theLink' href="paymentDelete.php?id=<?php echo $id ;?>">Delete</a></td>
-                <td class='tableData theTableData2'><a class='theLink' href="paymentReset.php?id=<?php echo $id ;?>">Reset</a></td>
+                <td class='tableData '><a class='theLink' href="paymentUpdate.php?id=<?php echo $id ;?>"><div class='theTableData'>Update</div></a></td>
+                <td class='tableData '><a class='theLink' href="paymentDelete.php?id=<?php echo $id ;?>"><div class='theTableData1'>Delete</div></a></td>
+                <td class='tableData '><a class='theLink' href="paymentReset.php?id=<?php echo $id ;?>"><div class='theTableData2'>Reset</div></a></td>
 
                 
                 
@@ -96,11 +97,12 @@
                 $_SESSION['ErrorMessage']= 'No Record Found in the Database';
             }
         ?>
-        <div style='margin-top:50px'>
+        <div style='margin-top:20px'>
             <div><?php echo message(); ?></div>
             <div><?php echo Success(); ?></div>
         </div>
 </table>
+        </div>
     </section>
 </body>
 </html>

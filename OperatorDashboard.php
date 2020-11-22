@@ -35,57 +35,68 @@
     <title>OperatorDashboard</title>
 </head>
 </head>
-<body style='background: #E0EFDE; min-height:100vh;'>
-    <div id = 'Header' style='margin-bottom:100px;'>
-        <div style = " height: 100%; padding-top: 20px;"><h3> <span style= "color:#fff; font-family: Helvetica" >Noble</span> Tutorial Class</h3>
-        <p></p>
-        <p style= "color: #fff; margin-top:8px" >(We deliver result with confidence)</p>
+<body style='background:#e0efde'>
+    <div>
+        <div id = 'Header' style='margin-bottom:100px;'>
+            <div style = " height: 100%; padding-top: 20px;"><h3> <span style= "color:#fff; font-family: Helvetica" >Noble</span> Tutorial Class</h3>
+            <p></p>
+            <p style= "color: #fff; margin-top:8px" >(We deliver result with confidence)</p>
+        </div>
     </div>
 
     <div class= "body" style = "padding-left:50px; padding-right:50px; margin-top:50px;">
         <div class='row'>
-        <div class="col-lg-4">
-                <div class='theContent'>
-                    <p>Register Students</p>
-                    <i class = "fa fa-registered"></i>
-                    <a href="RegisterStudent.php" target='_blank'><div class="theLinkDiv">Register</div></a>
-                </div>
-        </div>
-        <!-- Next Column -->
-        <div class="col-lg-4">
-                <div class='theContent'>
-                    <p>Veiw Student Record</p>
-                    <i class="fa fa-eye"></i>
-                    <a href="viewstudents.php"  target='_blank'><div class="theLinkDiv">Veiw</div>
-                </div></a>
-        </div>
-        <!-- Next Column -->
-        <div class="col-lg-4">
-            <div class='theContent'>
-                <p>Insert Payment</p>
-                <i class="fa fa-edit"></i>
-                <a href="operatorinsertPayment.php"  target='_blank'><div class="theLinkDiv">Insert</div></a>
+            <div class="col-lg-4">
+                    <div class='theContent'>
+                        <p>Register Students</p>
+                        <i class = "fa fa-registered"></i>
+                        <a href="RegisterStudent.php" target='_blank'><div class="theLinkDiv">Register</div></a>
+                    </div>
             </div>
-        </div>
+            <!-- Next Column -->
+            <div class="col-lg-4">
+                    <div class='theContent'>
+                        <p>Veiw Student Record</p>
+                        <i class="fa fa-eye"></i>
+                        <a href="viewstudents.php"  target='_blank'><div class="theLinkDiv">Veiw</div>
+                    </div></a>
+            </div>
+            <!-- Next Column -->
+            <div class="col-lg-4">
+                <div class='theContent'>
+                    <p>Insert Payment</p>
+                    <i class="fa fa-edit"></i>
+                    <a href="operatorInsertPayment.php"  target='_blank'><div class="theLinkDiv">Insert</div></a>
+                </div>
+            </div>
 
-        <!-- Next Column -->
-            <div class="col-lg-4">
-                <div class='theContent'>
-                    <p>Payment Record</p>
-                    <i class="fa fa-archive"></i>
-                    <a href="operatorPaymentRecord.php"  target='_blank'><div class="theLinkDiv">View</div></a>
+            <!-- Next Column -->
+                <div class="col-lg-4">
+                    <div class='theContent'>
+                        <p>Payment Record</p>
+                        <i class="fa fa-archive"></i>
+                        <a href="paymentRecord.php"  target='_blank'><div class="theLinkDiv">View</div></a>
+                    </div>
                 </div>
-            </div>
-        <!-- Next Column -->
-            <div class="col-lg-4">
-                <div class='theContent'>
-                    <p>Log Out</p>
-                    <i class="fa fa-sign-out"></i>
-                    <a href="#"  target='_blank'><div class="theLinkDiv">Log Out</div></a>
+            <!-- Next Column -->
+                <div class="col-lg-4">
+                    <div class='theContent'>
+                        <p>Expenses</p>
+                        <i class="fa fa-get-pocket"></i>
+                        <a href="expenses.php"  target='_blank'><div class="theLinkDiv">Get</div></a>
+                    </div>
                 </div>
-            </div>
+            <!-- Next Column -->
+                <div class="col-lg-4">
+                    <div class='theContent'>
+                        <p>Log Out</p>
+                        <i class="fa fa-sign-out"></i>
+                        <a href="#"  target='_blank'><div class="theLinkDiv">Log Out</div></a>
+                    </div>
+                </div>
         
+        </div>
     </div>
-    </div>
+    
 </body>
 </html>

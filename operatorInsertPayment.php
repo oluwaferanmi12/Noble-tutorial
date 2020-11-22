@@ -68,6 +68,44 @@
                     $Execution = mysqli_query($connection , $query);
                     if ($Execution){
                         $_SESSION['SuccessMessage']= "Payment Updated Successfully";
+                        $headers="From:NobleTutorial<support@nobletutorial.com.ng>"."\r\n";
+                        $headers .= "MIME-Version: 1.0"."\r\n";
+                        $headers .= "Content-Type: text/html; charset=UTF-8"."\r\n";
+                        $message = "
+                        <html> 
+                            <body style= 'background:#E0EFDE; min-heigt:100vh; padding-top:50px'>
+                                <div style='text-align:center; background-color:white; border-radius:10px; width:80%; margin:auto; height:600px; padding:20px;'>
+                                <div style= 'text-align:left; font-family:cursive;font-weight:bold;'>Hi , Oluwaferanmi <br> Your Receipt</div>
+                                <hr style='width:95%;text-align:left;margin-left:0'>
+                                    <div>
+                                        <div>Amount Paid</div>
+                                        <p style='font-weight:bold; font-size:24px'>2000</p>
+                                        <hr style='width:95%;text-align:left;margin-left:0'>
+                                        <div>'{$balance}'</div>
+                                        <p style='font-weight:bold; font-size:24px'>1000</p>
+                                        <hr style='width:95%;text-align:left;margin-left:0'>
+                                        <div>Date Paid</div>
+                                        <p style='font-weight:bold; font-size:24px'>Nov-12</p>
+                                        <hr style='width:95%;text-align:left;margin-left:0'>
+                                        <div>Expiry Date</div>
+                                        <p style='font-weight:bold; font-size:24px'>Dec 12</p>
+                                        <hr style='width:95%;text-align:left;margin-left:0'>
+
+                                        <p style='font-weight:bold; font-family:monospace;'>Note:The Date Paid only shows the most recent date you made a payment. <br>Also Kindly  Inform the Management for any mistake in the data above .</p>
+
+                                    </div>
+                                </div>
+                            </body>
+                        </html>
+                        ";
+                        $email_to = $email;
+                        $email_subject = 'Payment Receipt';
+                        if(mail($email_to , $email_subject, $message , $headers)){
+                            echo "success";
+                        }
+                        else{
+                            echo "Couldn't Send";
+                        }
                     }
                     else {
                         $_SESSION['ErrorMessage'] = "Couldn't Connect to the Database";
@@ -88,6 +126,44 @@
                     $Execution = mysqli_query($connection , $query);
                     if ($Execution){
                         $_SESSION['SuccessMessage']= "Payment Added Successfully";
+                        $headers="From:NobleTutorial<support@nobletutorial.com.ng>"."\r\n";
+                        $headers .= "MIME-Version: 1.0"."\r\n";
+                        $headers .= "Content-Type: text/html; charset=UTF-8"."\r\n";
+                        $message = "
+                        <html> 
+                            <body style= 'background:#E0EFDE; min-heigt:100vh; padding-top:50px'>
+                                <div style='text-align:center; background-color:white; border-radius:10px; width:80%; margin:auto; height:600px; padding:20px;'>
+                                <div style= 'text-align:left; font-family:cursive;font-weight:bold;'>Hi , Oluwaferanmi <br> Your Receipt</div>
+                                <hr style='width:95%;text-align:left;margin-left:0'>
+                                    <div>
+                                        <div>Amount Paid</div>
+                                        <p style='font-weight:bold; font-size:24px'>2000</p>
+                                        <hr style='width:95%;text-align:left;margin-left:0'>
+                                        <div>Balance</div>
+                                        <p style='font-weight:bold; font-size:24px'>1000</p>
+                                        <hr style='width:95%;text-align:left;margin-left:0'>
+                                        <div>Date Paid</div>
+                                        <p style='font-weight:bold; font-size:24px'>Nov-12</p>
+                                        <hr style='width:95%;text-align:left;margin-left:0'>
+                                        <div>Expiry Date</div>
+                                        <p style='font-weight:bold; font-size:24px'>Dec 12</p>
+                                        <hr style='width:95%;text-align:left;margin-left:0'>
+
+                                        <p style='font-weight:bold; font-family:monospace;'>Note:The Date Paid only shows the most recent date you made a payment. <br>Also Kindly  Inform the Management for any mistake in the data above .</p>
+
+                                    </div>
+                                </div>
+                            </body>
+                        </html>
+                        ";
+                        $email_to = $email;
+                        $email_subject = 'Payment Receipt';
+                        if(mail($email_to , $email_subject, $message , $headers)){
+                            echo "success";
+                        }
+                        else{
+                            echo "Couldn't Send";
+                        }
                     }
                     else {
                         $_SESSION['ErrorMessage'] = "Couldn't Connect to the Database";
@@ -103,7 +179,8 @@
     }
 ?>
 
-<div style='text-align:center;font-weight:bold;font-size:24px; margin-bottom: 20px'>Payment Form</div>
+<div style='background-color:#E0EFDE; min-height:100vh;'>
+    <div style='text-align:center;font-weight:bold;font-size:24px; margin-bottom: 20px'>Payment Form</div>
 
     <section id='insertPayment'>
         <form action="operatorInsertPayment.php" method="POST" class='theForm'>
@@ -124,6 +201,7 @@
             <input type="submit" name = 'submit' class='submit'>
         </form>
     </section>
+</div>
 </body>
 
 </html>

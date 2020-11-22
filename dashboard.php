@@ -48,7 +48,7 @@
 </div>
     <?php echo success() ; ?>
     <?php echo message() ; ?>
-    <div class= "body" style = "padding-left:50px; padding-right:50px; ">
+    <div class= "body" style = "padding-left:50px; padding-right:50px; " >
         <div class= 'row'>
             <div class="col-lg-4">
                 <div class='theContent'>
@@ -81,7 +81,7 @@
                 <div class='theContent'>
                     <p>Insert Payment</p>
                     <i class="fa fa-edit"></i>
-                    <a href="insertPayment.php"  target='_blank'><div class="theLinkDiv">Insert</div></a>
+                    <a href="operatorInsertPayment.php"  target='_blank'><div class="theLinkDiv">Insert</div></a>
                 </div>
             </div>
 
@@ -105,6 +105,15 @@
             <!-- Next Column -->
             <div class="col-lg-4">
                 <div class='theContent'>
+                    <p>Expenses</p>
+                    <i class="fa fa-get-pocket"></i>
+                    <a href="expenses.php"  target='_blank'><div class="theLinkDiv">Get</div></a>
+                </div>
+            </div>
+
+            <!-- Next Column -->
+            <div class="col-lg-4">
+                <div class='theContent'>
                     <p>Get Payment for the Day</p>
                     <i class="fa fa-get-pocket"></i>
                     <a href="getPayment.php"  target='_blank'><div class="theLinkDiv">Get</div></a>
@@ -116,7 +125,7 @@
                 <div class='theContent'>
                     <p>Manage Access</p>
                     <i class="fa fa-wheelchair"></i>
-                    <a href="#"  target='_blank'><div class="theLinkDiv">Manage</div></a>
+                    <a href="manageAccess.php"  target='_blank'><div class="theLinkDiv">Manage</div></a>
                 </div>
             </div>
             <!-- Next Column -->

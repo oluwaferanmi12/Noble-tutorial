@@ -7,16 +7,15 @@
     if(isset($_POST['yes'])){
         $delete_id = $_GET['delete_id'];
         
-        $query = "DELETE FROM student_record WHERE ID= '$delete_id'";
+        $query = "DELETE FROM admin WHERE ID= '$delete_id'";
         $execute = mysqli_query($connection , $query);
         if ($execute){
             $_SESSION['SuccessMessage'] = "Deleted Successfully";
-            echo "<script> window.close(); </script>";
-            
+            echo "<script>window.close() </script>";
         }
-}
+}   
         if (isset($_POST['no'])){
-            header('location:editStudent.php');
+            echo "<script>window.close() </script>";
         }
 ?>
 
@@ -57,7 +56,7 @@
 </head>
 <body style='background:#E0EFDE;'>
     <div style= "text-align:center;margin-top:50px">
-        <form action="studentDelete.php?delete_id=<?php echo $_GET['id']; ?>" method= "POST">
+        <form action="adminDelete.php?delete_id=<?php echo $_GET['id']; ?>" method= "POST">
             <p style='font-weight: bolder; font-size:20px'>Are You Sure You Want To Delete?</p>
             <input style="padding:10px 50px; font-size:18px; background: #ff3c38; border:none; border-radius:8px; font-weight:bold;" type="submit" value='Yes' name='yes'>
             

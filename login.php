@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class='col-lg-5' style='padding-top:75px;'>
-        <div style= "width:90%; display:flex; min-height:40vh justify-content:center; align-items:center; background-color:white; margin-top:75px; border-radius:10px; margin:auto;  "> 
+        <div style= "width:90%; display:flex; min-height:40vh justify-content:center; align-items:center; background-color:white; margin-top:75px; border-radius:10px; margin:auto;" class='form-div'> 
     
 
             <form action="login.php" method= 'POST'  style='width:70%; margin:auto; text-align:center; display:flex; flex-direction:column;  margin-top:50px; ' class='login-form'>

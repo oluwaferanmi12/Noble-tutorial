@@ -114,6 +114,25 @@
             $Execute = mysqli_query($connection , $query);
             if ($Execute){
                 $_SESSION['SuccessMessage'] = "REGISTERED SUCCESSFULLY";
+                $headers="From:NobleTutorial<support@nobletutorial.com.ng>"."\r\n";
+                $headers .= "MIME-Version: 1.0"."\r\n";
+                $headers .= "Content-Type: text/html; charset=UTF-8"."\r\n";
+                $message = "
+                <html> 
+                    <body> 
+                        <h1>THIS IS USING THE W3 SCHOOL METHOD</h1>
+                        <p>This is me trying it out on registration</p>
+                    </body>
+                </html>
+                ";
+                $email_to = $email;
+                $email_subject = 'SuccessFul Registration';
+                if(mail($email_to , $email_subject, $message , $headers)){
+                    echo "success";
+                }
+                else{
+                    echo "Couldn't Send";
+                }
                 $name = '';
                 $date = '';
                 $class = '';
@@ -127,6 +146,8 @@
                 $department = '';
                 $subject = '';
                 $email = '';
+                
+                
             }
             else{
                 'Could Not Connect to the Database';
@@ -137,7 +158,7 @@
 
 ?>
 
-    <div class="row theRow" style="background-color:  #f8f4f4; padding-bottom:50px" >
+    <div class="row theRow" style="background-color:  #f8f4f4; padding-bottom:50px " >
         <div class="offset-lg-1 col-lg-10 theFirstCol" style= 'padding-bottom:40px;'>
             <div >
                 <form action="RegisterStudent.php" method="POST" class="theForm">
@@ -152,7 +173,17 @@
                             <input type="date" name="date" value='<?php echo $date; ?>'>
                             <div style='color: red; font-size: 12px;'><?php echo $dateError;?></div>
                             <p>Class</p>
-                            <input type="text" name="class" value='<?php echo $class;?>'>
+                            <select class='theSelect' type="text" name="class" value='<?php echo $class;?>'> 
+                                <option value="Jss1">Jss1</option>
+                                <option value="Jss2">Jss2</option>
+                                <option value="Jss3">Jss3</option>
+                                <option value="SSS1">SSS1</option>
+                                <option value="SSS2">SSS2</option>
+                                <option value="SSS3">SSS3</option>
+                                <option value="UTME">UTME</option>
+                                <option value="WAEC">WAEC</option>
+                                
+                            </select >
                             <div style='color: red; font-size: 12px;'><?php echo $classError;?></div>
                             <p>Sex</p>
                             <select class='theSelect' type="text" name="sex" value='<?php echo $sex; ?>'>
@@ -268,7 +299,7 @@
                             </select>
                             <div style='color: red; font-size: 12px;'><?php echo $nationalityError;?></div>
                         </div>
-                        <div class="col-lg-5">
+                        <div  class="col-lg-5 register-second-div">
                             <p>Religion</p>
                             <select type="text" class='theSelect' name="religion" value='<?php echo $religion ; ?>'> 
                                     <option value="Christianity">Christianity</option>
@@ -286,13 +317,13 @@
                             <select type="text" class= 'theSelect' name="department" value='<?php $department ; ?>'> 
                                 <option value="Science">Science</option>
                                 <option value="Art">Art</option>
-                                <option value="Commercial"></option>
+                                <option value="Commercial">Commercial</option>
                                 <option value="Other">Other</option>
                             </select>
                             <div style='color: red; font-size: 12px;'><?php echo $departmentError;?></div>
                             <p>Subject Area of Weakness</p>
                             <select type="text" class='theSelect' name="SubjectOfWeakness" value='<?php echo $subject ; ?>'> 
-                                <option value="Math">Math</option>
+                                <option type='radio' value="Math">Math</option>
                                 <option value="English">English</option>
                                 <option value="Biology">Biology</option>
                                 <option value="Chemistry">Chemistry</option>

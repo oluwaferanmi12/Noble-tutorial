@@ -43,6 +43,17 @@
     <title>VeiwStudent</title>
 </head>
 <body>
+    <?php 
+        $page = @$_GET['page'];
+        $query = "SELECT COUNT(id) FROM student_record";
+        $execute = mysqli_query($connection , $query);
+        $row = mysqli_fetch_array($execute);
+        $limit = 500;
+        $NoOfPagination = ceil($row[0]/$limit);
+        $previous = $page - 1; 
+        $next = $page + 1; 
+
+    ?>
     <div id = 'Header'>
         <div style = " height: 100%; padding-top: 20px;"><h3> <span style= "color:#fff; font-family: Helvetica" >Noble</span> Tutorial Class</h3>
         <p></p>
@@ -50,27 +61,72 @@
         </div>
     </div>
     <section style= 'padding:10px; background: #E0EFDE; min-height: 100vh;'>
-    <div style = 'font-size: 30px; font-weight:bolder;font-family:monospace; margin-bottom:50px; display:flex; flex-direction:row;justify-content:space-around; width:70%; margin:auto; padding-bottom:30px;'><p style='text-decoration: underline; '>STUDENTS RECORD</p>
-    <div style='flex:1;'></div>
-    <div class= 'search' style= 'text-align:right;'>
-        <!-- The Search Form -->
-        <form action="viewstudents.php" method= "POST">
-            <input class= 'searchInput' type="text" name= 'search' placeholder= "Search By Name or Email">
-            <input type='submit' name = 'submit' value='Search' class='submitInput' />
-        </form>
+    <div class='student-div' style = 'font-family:monospace; margin-bottom:50px; display:flex; flex-direction:row; justify-content:space-around; width:100%; margin:auto;  '>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <?php 
+                    if($page > 1){
+
+                    
+                ?>
+                <li class= "page-item">
+                    <a class="page-link" href="viewstudents.php?page=<?php echo $previous ;?>">Previous</a>
+                </li>
+                <?php } ?>
+            <?php 
+                for ($i=1 ; $i <= $NoOfPagination ; $i++ ){
+
+                
+            ?>
+            <li class="page-item">
+                <a class="page-link" href="viewstudents.php?page=<?php echo $i ?>"><?php echo $i ; ?></a>
+            </li>
+
+            <?php } ?>
+
+            <?php 
+                if ($page < $NoOfPagination){
+
+                
+            ?>
+            <li class="page-item">
+                <a class= "page-link" href="viewstudents.php?page=<?php echo $next ?>">Next</a>
+            </li>
+
+            <?php } ?>
+        </ul>
+        
+    </nav>    
+    <div class='divider' style='flex:1;'></div>
+    <!-- The Search Form -->
+    <div class="container-search" style= "display:flex;  width:70%; flex-direction:row;">
+            <div class= 'search'>
+                <form class='submit-form'style= " width:600px " action="viewstudents.php" method= "POST">
+                    <input class= 'searchInput' type="text" name= 'search' placeholder= "By Name or Email">
+                    <input type='submit' name = 'submit' value='Search' class='submitInput' />
+                </form>
+            </div>
         <!-- The Filter By Form  -->
-        <form action="viewstudents.php" method= "POST">
-            <p style='font-size:16px;display:inline'>Filter By</p>
-            <select name="theClass" id="" style= 'font-size:20px'>
-                <option value="science">Science</option>
-                <option value="art">Art</option>
-                <option value="commercial">Commercial</option>
-            </select>
-            <input type="submit" name = 'filtersubmit' style='font-size:20px;padding:0px 16px; border-radius:8px;' value='Filter'>
-        </form>
+    <div class='divider' style='flex:1;'></div>
+        
+            <div>
+                <form style= " width:400px " action="viewstudents.php" method= "POST">
+                    <p style='font-size:16px;display:inline'>Filter By</p>
+                    <select name="theClass" id="" style= 'font-size:20px'>
+                        <option value="science">Science</option>
+                        <option value="art">Art</option>
+                        <option value="commercial">Commercial</option>
+                    </select>
+                    <input type="submit" name = 'filtersubmit' style='font-size:20px;padding:0px 16px; border-radius:8px;' value='Filter'>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
-<table class="table table-hover ">
+
+
+<p style='text-decoration: underline; font-size:30px ; font-weight:solid; '>STUDENTS RECORD</p>
+<div style="overflow-x:scroll;">
+    <table class="table table-hover " >
     <thead>
         <tr style='text-align:center;font-size:18px;'>
                 <th scope="col">No</th>
@@ -97,8 +153,12 @@
                     $class = $_POST['theClass'];
                     $Query = "SELECT * FROM student_record WHERE department LIKE '%$class%' ORDER BY id DESC";
                 }
+                else if (isset($_GET['page'])){
+                    $ParticularPage = ($page-1) * $limit;
+                    $Query = "SELECT * FROM student_record LIMIT $ParticularPage , $limit";
+                }
                 else{
-                    $Query = "SELECT * FROM student_record ORDER BY id DESC";
+                    $Query = "SELECT * FROM student_record  LIMIT $limit";
                 }
                 
                 $Execute = mysqli_query($connection , $Query);
@@ -146,6 +206,7 @@
         ?>
         <div><?php echo message(); ?></div>
 </table>
+</div>
     </section>
     
 </body>
