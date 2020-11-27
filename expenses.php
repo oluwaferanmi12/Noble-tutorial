@@ -20,7 +20,7 @@
     if (isset($_POST['submit'])){
         $used_for = $_POST['for'];
         $currentTime = time();
-        $date = strftime("%B-%d-%Y" , $currentTime) ;
+        $date = strftime("%d-%B-%Y", $currentTime) ;
         $amount = $_POST['amount'];
         if (empty($used_for) || empty($amount) ){
             $_SESSION['ErrorMessage'] = "All Fields Are Required";

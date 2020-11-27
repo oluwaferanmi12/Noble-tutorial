@@ -13,7 +13,7 @@
     }
 
     function admin_login(){
-        if (isset($_SESSION['Admin_id'])){
+        if (isset($_SESSION['Admin_id']) && isset($_SESSION['User_id'])){
             return true;
         }
         else{

@@ -68,8 +68,8 @@
     />
     <link rel="stylesheet" href="newveiwstudent.css?v=<?php echo time()?>">
 </head>
-<body style= 'background-color: #E0EFDE; overflow-x:hidden;'>
-    <div id = 'Header' style='margin-bottom:100px;'>
+<body style= 'background-color: #E0EFDE; overflow-x:hidden; overflow-y:hidden;'>
+    <div id = 'Header' style='margin-bottom:50px;'>
         <div style = " height: 100%; padding-top: 20px;"><h3> <span style= "color:#fff; font-family: Helvetica" >Noble</span> Tutorial Class</h3>
         <p></p>
         <p style= "color: #fff; margin-top:8px" >(We deliver result with confidence)</p>
@@ -82,12 +82,12 @@
                 <img class='login-img' src="./svg/undraw_authentication_fsn5.svg" alt="">
             </div>
         </div>
-        <div class='col-lg-5' style='padding-top:75px;'>
-        <div style= "width:90%; display:flex; min-height:40vh justify-content:center; align-items:center; background-color:white; margin-top:75px; border-radius:10px; margin:auto;" class='form-div'> 
+        <div class='col-lg-5 login-div-col-1' style='padding-top:75px;'>
+        <div style= "width:90%; display:flex; min-height:40vh justify-content:center; align-items:center; background-color:white; margin-top:75px; border-radius:10px; margin:auto; " class='form-div'> 
     
 
             <form action="login.php" method= 'POST'  style='width:70%; margin:auto; text-align:center; display:flex; flex-direction:column;  margin-top:50px; ' class='login-form'>
-                <div style='text-align:left; margin-bottom:10px; font-weight:bold;'>Welcome Back</div>
+                <div style='text-align:left; margin-bottom:20px; font-weight:bold;'>Hi, Welcome Back</div>
                 <p class='theP'>Email</p>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">

@@ -57,25 +57,32 @@
     //     move_uploaded_file($_FILES['img']['tmp_name'] , $target );
         
     // }
-        $query = "SELECT COUNT(id) FROM?.w7 payment_record";
-        $execute = mysqli_query($connection , $query);
-        $rowPagination = mysqli_fetch_array($execute);
-        while ($RowPagination = mysqli_fetch_array($execute)){
+        // $query = "SELECT COUNT(id) FROM?.w7 payment_record";
+        // $execute = mysqli_query($connection , $query);
+        // $rowPagination = mysqli_fetch_array($execute);
+        // while ($RowPagination = mysqli_fetch_array($execute)){
     
         
 
 ?>
 
-<pre>
-    <?php 
-    print_r($rowPagination);
-    echo "<br>";
-    ?>
-            
-</pre>
+<?php 
+    $futureTime = time()+86400;
+    
+    
+    $currentTime= time(); 
+    echo $currentTime . "<br>";
+    $dateTime = strtotime("3-October-2015");
+    $testTime = strftime("%d-%B-%Y" , $currentTime);
+    $Monday = strtotime("23-November-2020");
+    echo $testTime. "<br>";
+    echo $Monday;
+    
+    // $newTime = strtotime($dateTime);
+    // echo $newTime . "<br>";
+    // echo $futureTime - $newTime ;
+    // // echo $futureTime - $dateTime;
+    
 
-
-<?php } ?>
-<?php echo $rowPagination[0]?>
-
-
+    
+?>

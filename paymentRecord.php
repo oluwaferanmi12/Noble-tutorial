@@ -61,6 +61,7 @@
     <thead>
         <tr style='text-align:center;font-size:18px;'>
                 <th scope="col">id</th>
+                <th scope="col">student_id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Department</th>
@@ -69,6 +70,9 @@
                 <th scope="col">Expiry</th>
                 <th scope="col">Most Recent <br> Payment</th>
                 <th scope = "col">Total Paid</th>
+                <th scope = "col">To Be Paid</th>
+                <th scope = "col">Subscription</th>
+                
         </tr>
     </thead>
     <tbody>
@@ -107,6 +111,7 @@
                         $no = $no + 1;
                         $id = $row['id'];
                         $Name = $row['name'];
+                        $student_id = $row['student_id'];
                         $email = $row['email'];
                         $Department = $row['department'];
                         $Date = $row['date'];
@@ -114,6 +119,8 @@
                         $expiry = $row['expiry'];
                         $amount= $row['amount'];
                         $Total = $row['Total_paid'];
+                        $toBePaid = $row['To_Be_Paid'];
+                        $subscription = $row['subscription'];
                         array_push($theList , $Name);
                         // The Logic behind this array that is here is that it just tries to check the list is set at all , if it is set at any point then it means that a record is found because if the $row should return a particular array , then it means that particular data can be found in the database, then the while loop runs else if the while loop does not run , it means no such data is found in the database thereby making the array empty still
 
@@ -124,6 +131,7 @@
                         
             <tr style='text-align:center; font-family:monospace; font-size:16px;'>
                 <th scope="row"><?php echo $no ;?></th>
+                <td class='tableData'><?php echo $student_id ;?></td>
                 <td class='tableData'><?php echo $Name ;?></td>
                 <td class='tableData'><?php echo $email ;?></td>
                 <td class='tableData'><?php echo $Department ;?></td>
@@ -132,6 +140,8 @@
                 <td class='tableData'><?php echo $expiry ;?></td>
                 <td class='tableData'><?php echo $amount ;?></td>
                 <td class='tableData'><?php echo $Total ;?></td>
+                <td class='tableData'><?php echo $toBePaid ;?></td>
+                <td class='tableData'><?php echo $subscription ;?></td>
                 
 
                 

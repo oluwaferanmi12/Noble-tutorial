@@ -110,13 +110,14 @@
     <div class='divider' style='flex:1;'></div>
         
             <div>
-                <form style= " width:400px " action="viewstudents.php" method= "POST">
-                    <p style='font-size:16px;display:inline'>Filter By</p>
+                <form style= " width:300px; " action="viewstudents.php" method= "POST">
+                    
                     <select name="theClass" id="" style= 'font-size:20px'>
                         <option value="science">Science</option>
                         <option value="art">Art</option>
                         <option value="commercial">Commercial</option>
                     </select>
+                    
                     <input type="submit" name = 'filtersubmit' style='font-size:20px;padding:0px 16px; border-radius:8px;' value='Filter'>
                 </form>
             </div>
@@ -124,12 +125,13 @@
     </div>
 
 
-<p style='text-decoration: underline; font-size:30px ; font-weight:solid; '>STUDENTS RECORD</p>
+<p style='text-decoration: underline; font-size:30px ; font-weight:solid; margin-top:40px'>STUDENTS RECORD</p>
 <div style="overflow-x:scroll;">
     <table class="table table-hover " >
     <thead>
         <tr style='text-align:center;font-size:18px;'>
                 <th scope="col">No</th>
+                <th scope="col">Student_id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Date</th>
                 <th scope="col">Address</th>
@@ -158,7 +160,7 @@
                     $Query = "SELECT * FROM student_record LIMIT $ParticularPage , $limit";
                 }
                 else{
-                    $Query = "SELECT * FROM student_record  LIMIT $limit";
+                    $Query = "SELECT * FROM student_record ORDER BY id DESC LIMIT $limit  ";
                 }
                 
                 $Execute = mysqli_query($connection , $Query);
@@ -168,6 +170,7 @@
                     while($row = mysqli_fetch_array($Execute)){
                         $No = $No + 1 ;
                         $Name = $row['name'];
+                        $student_id = $row['student_id'];
                         $Date = $row['date'];
                         $Address = $row['address'];
                         $Phone = $row['phone'];
@@ -185,7 +188,9 @@
                         
             <tr style='text-align:center; font-family:monospace; font-size:16px;'>
                 <th scope="row"><?php echo $No ;?></th>
+                <td class='tableData'> <?php echo $student_id ?></td>
                 <td class='tableData'><?php echo $Name ;?></td>
+
                 <td class='tableData'><?php echo $Date ;?></td>
                 <td class='tableData'><?php echo $Address ;?></td>
                 <td class='tableData'><?php echo $Phone ;?></td>

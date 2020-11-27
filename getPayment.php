@@ -4,7 +4,7 @@
 <?php confirm_admin_login() ; ?>
 <?php 
     $currentTime = time();
-    $theDate = strftime("%B-%d-%Y" , $currentTime);
+    $theDate = strftime("%d-%B-%Y" , $currentTime);
     $query = "SELECT * FROM payment_record WHERE date like '%$theDate%'";
     $execution = mysqli_query($connection , $query);
     $theTotalPayment = array();

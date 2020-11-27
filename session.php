@@ -33,7 +33,7 @@
     } 
     function ErrorText(){
         if (isset($_SESSION['TextE'])){
-            $output = "<div style = 'background:#F3B3A6; width:80%; margin:auto; height:36px; margin-bottom:10px; border-radius:8px; font-size:16px; padding-top:10px;'>{$_SESSION['TextE']}</div>";
+            $output = "<div style = 'background:#F3B3A6; width:80%; margin:auto; height:36px; margin-bottom:10px; border-radius:8px; font-size:16px; padding-top:4px;'>{$_SESSION['TextE']}</div>";
             $_SESSION['TextE'] = null ;
             return $output;
         }

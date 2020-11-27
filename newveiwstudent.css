@@ -315,8 +315,12 @@ input{
     .login-img{
         display: none !important;
     }
+    .login-div-col-1{
+        padding-top: 0px !important;
+    }
     .form-div{
         margin-bottom:100px !important;
+        /* margin-top: 10px !important; */
     }
     .theContent{
         width:100%;
@@ -358,12 +362,13 @@ input{
         flex-direction:column !important;
     }
     .submit-form{
-        width: 400px !important;
+        width: 300px !important;
         margin-bottom:10px;
     }
     .editStudent-submit{
         width: 400px;
     }
+    
 }
 
 

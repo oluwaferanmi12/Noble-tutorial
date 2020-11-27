@@ -1,6 +1,13 @@
 <?php $title = 'RegisterStudent' ; ?>
 <?php include ('components/header.php'); ?>
+
 <?php 
+?>
+<?php 
+    $display='';
+    $student_name= '';
+    $newInput= '';
+    $secondDisplay = 'none';
     $nameError = '';
     $dateError= '';
     $classError= '';
@@ -27,6 +34,30 @@
     $department = '';
     $subject = '';
     $email = '';
+            if (isset($_GET['email'])){
+                $toUpdateEmail = $_GET['email'];
+                $secondDisplay = '';
+                $display = 'none';
+                $query ="SELECT * FROM student_record WHERE email = '$toUpdateEmail'";
+                $execute = mysqli_query($connection , $query);
+                $row = mysqli_fetch_array($execute);
+                if($row){
+                    $student_name = $row['name'];
+                    $dataId = $row['id'];
+                    if (3-strlen($row['id']) ==2 ){
+                        $studentId = '00'.$row['id'];
+                    }
+                    else if (3 - strlen($row['id']) == 1){
+                        $studentId = '0'.$row['id'];
+                    }
+                    else{
+                        $studentId = $row['id'];
+                    }
+                    $newInput = "NTC/2021/".$studentId;
+                    $query = "UPDATE student_record SET student_id = '$newInput' WHERE id = '$dataId'";
+                    $execute = mysqli_query($connection , $query);
+                }
+            }
     if(isset($_POST['submit'])){
         if (empty($_POST['name'])){
             $nameError = "* Name is Required *";
@@ -105,7 +136,10 @@
         }
         else{
             $email = $_POST['email'];
+            $emailToCheck = $email;
         }
+
+        
         
 
         if(!empty($name) && !empty($date) && !empty($class) && !empty($sex) && !empty($address) && !empty($state) && !empty($nationality) && !empty($religion) && !empty($phone) && !empty($pphone) && !empty($department) && !empty($subject) && !empty($email)){
@@ -114,25 +148,7 @@
             $Execute = mysqli_query($connection , $query);
             if ($Execute){
                 $_SESSION['SuccessMessage'] = "REGISTERED SUCCESSFULLY";
-                $headers="From:NobleTutorial<support@nobletutorial.com.ng>"."\r\n";
-                $headers .= "MIME-Version: 1.0"."\r\n";
-                $headers .= "Content-Type: text/html; charset=UTF-8"."\r\n";
-                $message = "
-                <html> 
-                    <body> 
-                        <h1>THIS IS USING THE W3 SCHOOL METHOD</h1>
-                        <p>This is me trying it out on registration</p>
-                    </body>
-                </html>
-                ";
-                $email_to = $email;
-                $email_subject = 'SuccessFul Registration';
-                if(mail($email_to , $email_subject, $message , $headers)){
-                    echo "success";
-                }
-                else{
-                    echo "Couldn't Send";
-                }
+                // $display = 'none';
                 $name = '';
                 $date = '';
                 $class = '';
@@ -146,6 +162,9 @@
                 $department = '';
                 $subject = '';
                 $email = '';
+                $display = 'none';
+                header("Location:RegisterStudent.php?email=$emailToCheck");
+
                 
                 
             }
@@ -155,16 +174,16 @@
         }
     }
 
+    
+    ?>
+    <?php echo Success() ;?>
 
-?>
-
-    <div class="row theRow" style="background-color:  #f8f4f4; padding-bottom:50px " >
+    <div class="row theRow" style="background-color:  #f8f4f4; padding-bottom:50px; display:<?php echo $display?>; " >
         <div class="offset-lg-1 col-lg-10 theFirstCol" style= 'padding-bottom:40px;'>
-            <div >
+            <div  >
                 <form action="RegisterStudent.php" method="POST" class="theForm">
                     <div class="row" style="padding-top: 35px;">
                         <div class="col-lg-12" style="text-align: center; margin-bottom: 30px; font-size: 24px; font-weight: bolder; text-decoration: underline; letter-spacing: 0.04em;">REGISTRATION FORM</div>
-                        <?php echo Success() ;?>
                         <div class="offset-1 col-lg-5" >
                             <p>Name</p>
                             <input type="text" name="name" value='<?php echo $name ; ?>'>
@@ -182,6 +201,8 @@
                                 <option value="SSS3">SSS3</option>
                                 <option value="UTME">UTME</option>
                                 <option value="WAEC">WAEC</option>
+                                <option value="Neco">WAEC</option>
+                                <option value="Post Utme">WAEC</option>
                                 
                             </select >
                             <div style='color: red; font-size: 12px;'><?php echo $classError;?></div>
@@ -352,6 +373,14 @@
                 
             </div>
         </div>
+    </div>
+
+    <div style= "display:<?php echo $secondDisplay ;?>;   ">
+        <div style= " background-color:#E0EFDE; min-height:100vh;">
+        <div style= "width:400px; background-color:white; height:40vh; margin:auto ; position:relative; top:100px; border-radius:10px; padding:30px 20px; text-align:center; font-weight:bolder; font-size:30px">
+            The Generated Id for  <?php echo $student_name ?> is <br> <?php echo $newInput ?>
+        </div>
+    </div>
     </div>
     
 </body>

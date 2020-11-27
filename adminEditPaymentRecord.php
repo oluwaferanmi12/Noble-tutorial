@@ -2,12 +2,54 @@
 <?php
     @include('components/header.php');
 ?>
+<?php 
+    $page = @$_GET['page'];
+    $limit = 500;
+    $query = "SELECT COUNT(id) FROM payment_record";
+    $execute = mysqli_query($connection , $query);
+    $row = mysqli_fetch_array($execute);
+    $NoOfData = $row[0];
+    $NoOfPagination = ceil($NoOfData/$limit);
+    $previous = $page -1;
+    $next = $page + 1;
+    
+?>
 
 
     <!-- The Search Button and the Filter Button  -->
     
-    <section style= 'padding:10px; background: #E0EFDE; min-height: 100vh;'>
-    <div >
+    <section style= 'padding:10px; background: #E0EFDE; min-height: 100vh;  '>
+    <div style='  display:flex;'  >
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <?php if ($page > 1){
+                ?>
+                <li class= "page-item">
+                    <a class="page-link" href="adminEditPaymentRecord.php?page=<?php echo $previous ;?>">Previous</a>
+                </li>
+                <?php } ?>
+                <?php 
+                    for ($i=1; $i <= $NoOfPagination; $i++){
+
+                ?>
+                <li class="page-item">
+                    <a class= "page-link" href="adminEditPaymentRecord.php?page=<?php echo $i ;?>"> <?php echo $i ;?></a>
+                </li>
+                <?php } ?>
+
+                <?php 
+                    if ($page < $NoOfPagination){
+
+                ?>
+                <li class= "page-item">
+                    <a class="page-link" href="adminEditPaymentRecord.php?page=<?php echo $next ;?>">Next</a>
+                </li>
+
+                    
+                <?php } ?>
+            </ul>
+        </nav>
+        <div style='flex:1;'></div>
         <form action="paymentRecord.php" method="POST" style='text-align:right; margin-bottom:20px '>
             <input type="text" name='search' placeholder='Search by name' style='height:40px; padding:10px; border-radius:10px;'>
             <input type="submit" name = "submit" style='height:40px; border-radius:10px; padding:0px 10px; font-weight:bold;'>
@@ -29,11 +71,6 @@
                 <th scope="col">Update</th>
                 <th scope="col">Delete</th>
                 <th scope="col">Reset</th>
-
-
-                
-                
-                
             </tr>
         </thead>
         <tbody>
@@ -42,6 +79,12 @@
                 if (isset($_POST['submit'])){
                     $search = $_POST['search'];
                     $Query = "SELECT * FROM payment_record WHERE name LIKE '%$search%'  ORDER BY id DESC";
+                }
+                else if (isset($_GET['page'])){
+                    $page = $_GET['page'];
+                    $startPage = ($page -1) * $limit ;
+                    $Query = "SELECT * FROM payment_record ORDER BY id DESC LIMIT $startPage , $limit";
+
                 }
                 
                 

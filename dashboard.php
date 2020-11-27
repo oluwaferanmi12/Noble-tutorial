@@ -1,7 +1,7 @@
 
 <?php include('session.php');?>
-<?php include('functions.php') ?>
-<?php confirm_login() ?>
+<?php include('functions.php'); ?>
+<?php confirm_login() ; ?>
 <?php confirm_admin_login() ; ?>
 
 <!DOCTYPE html>
