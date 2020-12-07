@@ -79,6 +79,15 @@
             <!-- Next Column -->
             <div class="col-lg-4">
                 <div class='theContent'>
+                    <p>Get ID</p>
+                    <i class="fa fa-edit"></i>
+                    <a href="forgotId.php"  target='_blank'><div class="theLinkDiv">Edit</div>
+                </div></a>
+            </div>
+
+            <!-- Next Column -->
+            <div class="col-lg-4">
+                <div class='theContent'>
                     <p>Insert Payment</p>
                     <i class="fa fa-edit"></i>
                     <a href="operatorInsertPayment.php"  target='_blank'><div class="theLinkDiv">Insert</div></a>
@@ -133,7 +142,7 @@
                 <div class='theContent'>
                     <p>Log Out</p>
                     <i class="fa fa-sign-out"></i>
-                    <a href="#"  target='_blank'><div class="theLinkDiv">Log Out</div></a>
+                    <a href="logOut.php" ><div class="theLinkDiv">Log Out</div></a>
                 </div>
             </div>
 

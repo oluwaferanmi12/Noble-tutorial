@@ -1,0 +1,191 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,600;1,300&family=Montserrat&family=Roboto:wght@500&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Anton&family=Josefin+Sans&family=Lexend+Deca&family=Livvic:ital,wght@1,300&display=swap');
+
+
+
+:root{
+    --Noto: 'Noto Sans HK', sans-serif;
+    --josefin-slab: 'Josefin Slab', serif;
+    --montserrat: 'Montserrat', sans-serif;
+    --roboto : 'Roboto', sans-serif;
+    --ubuntu:'Ubuntu', sans-serif;
+    --Abel:'Abel' , sans-serif;
+    --Anton: 'Anton' , sans-serif ;
+    --Josefin: "Josefin Sans" , sans-serif;
+    --Lexend: "Lexend Deca" , sans-serif;
+    --Livvic: "Livvic" , sans-serif ;
+    --gradient: -moz-linear-gradient(90deg, rgba(4, 84%, 49%, 1) 0%, rgba(37, 89%, 52%, 1) 100%);
+    --black-1:#1f363d;
+    --black-2:#383d3b;
+    --black-3:#012a36;
+    --black-4:#393d3f;
+    --orange:rgb(220, 73, 58);
+    --black-1-opacity:rgba(31, 54, 61 , 0.2);
+    --white-1:#f1faee
+
+
+
+
+}
+
+/* General Styling  */
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    color: var(--black-1);
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+    color:var(--black-1);
+}
+
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+
+/*----------------- Styling of the nav ---------------- */
+.nav{
+    padding: 0px 30px;
+    border-bottom: 1px solid var(--black-1-opacity);
+    background-color: var(--white-1);
+    height: 10vh;
+    transition: 1s ;
+    
+}
+.nav .nav-content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* border: 1px solid red ; */
+    width: 100%;
+    justify-content: space-between;
+}
+
+.collapse{
+    height: 70vh;
+}
+
+.new-height{
+    height: 70vh;
+}
+
+.nav .nav-brand .nav-brand-item{
+    font-family: var(--Abel);
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 8px;
+
+}
+
+.nav .nav-brand .nav-brand-item .span_1{
+    color: var(--orange);
+}
+
+.nav .toggle-collapse{
+    position: absolute;
+    right:50px;
+    top:8px;
+    font-size: 30px;
+    display: none;
+    
+    
+}
+
+
+.nav ul{
+    display: flex;
+    margin: 0px;
+    
+    
+
+}
+
+
+
+.nav ul .nav-menu-item{
+    list-style-type: none;
+    padding: 20px 30px;
+    font-size: 18px;
+    font-family: var(--Josefin);
+    margin: 0px;
+    transition: 0.5s ease-in;
+    margin: 0px;
+}
+
+
+
+.nav ul .nav-menu-item:hover {
+    background: var(--black-1);
+    
+}
+
+.nav ul .nav-menu-item:hover a{
+    color: white;
+}
+
+.nav .nav-social a{
+    display: inline-block;
+    padding: 12px 10px;
+    
+}
+
+.nav .nav-social {
+    margin-right: 20px;
+    font-size: 20px;
+}
+/*---------x-- Styling of the nav  ----------x--------*/
+
+/*------------------------- main --------------------- */
+/*------------------------ ShowCase ----------------------------- */
+
+main .showcase{
+    background-image: linear-gradient(rgba(220, 73, 58,0.5) , rgba(220, 73, 58,0.5)), url('./images/blogPost/pexels-redrecords-©️-2872418.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    /* background-attachment: fixed; */
+    height: 100vh;
+    position: relative;
+}
+
+main .showcase-img{
+    position: absolute;
+    bottom: 0px;
+    
+}
+/*------------x------------ ShowCase ----------------x------------- */
+
+/*--------x----------------- main ----------x----------- */
+
+
+@media (max-width:960px){
+    .nav .toggle-collapse{
+        display: initial;
+    }
+
+    .nav .nav-content{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .nav .nav-menu{
+        display: flex;
+        flex-direction: column !important;
+        
+    }
+
+
+    
+}
+
+

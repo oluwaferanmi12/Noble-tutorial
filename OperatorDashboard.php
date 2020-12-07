@@ -1,3 +1,8 @@
+
+<?php include('session.php');?>
+<?php include('functions.php'); ?>
+<?php confirm_login() ; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,6 +75,7 @@
                 </div>
             </div>
 
+
             <!-- Next Column -->
                 <div class="col-lg-4">
                     <div class='theContent'>
@@ -86,12 +92,32 @@
                         <a href="expenses.php"  target='_blank'><div class="theLinkDiv">Get</div></a>
                     </div>
                 </div>
+
+            <!-- Next Column -->
+                <div class="col-lg-4">
+                    <div class='theContent'>
+                        <p>Get Payment for the Day</p>
+                        <i class="fa fa-get-pocket"></i>
+                        <a href="getPayment.php"  target='_blank'><div class="theLinkDiv">Get</div></a>
+                    </div>
+                </div>
+
+            <!-- Next Column -->
+                <div class="col-lg-4">
+                    <div class='theContent'>
+                        <p>Get ID</p>
+                        <i class="fa fa-edit"></i>
+                        <a href="forgotId.php"  target='_blank'><div class="theLinkDiv">Edit</div>
+                    </div></a>
+                </div>
+
+                
             <!-- Next Column -->
                 <div class="col-lg-4">
                     <div class='theContent'>
                         <p>Log Out</p>
                         <i class="fa fa-sign-out"></i>
-                        <a href="#"  target='_blank'><div class="theLinkDiv">Log Out</div></a>
+                        <a href="logOut.php"  ><div class="theLinkDiv">Log Out</div></a>
                     </div>
                 </div>
         

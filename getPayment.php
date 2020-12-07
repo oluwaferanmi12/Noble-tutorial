@@ -1,7 +1,7 @@
 <?php include('functions.php') ?>
 <?php confirm_login() ?>
 <?php include ('connection.php') ?>
-<?php confirm_admin_login() ; ?>
+
 <?php 
     $currentTime = time();
     $theDate = strftime("%d-%B-%Y" , $currentTime);

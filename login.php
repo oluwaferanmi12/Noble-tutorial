@@ -26,6 +26,9 @@
                     $_SESSION['User_id'] = $row['id'];
                     header("Location:OperatorDashboard.php");
                 }
+                else {
+                    $_SESSION['ErrorMessage']="Wrong Credentials";
+                }
             }
         }
         
@@ -75,7 +78,6 @@
         <p style= "color: #fff; margin-top:8px" >(We deliver result with confidence)</p>
         </div>
     </div>
-    <div><?php echo message()?></div>
     <div class="row">
         <div class="offset-lg-1 col-lg-5" style='text-align:center;'>
             <div class='img-container'>
@@ -83,9 +85,10 @@
             </div>
         </div>
         <div class='col-lg-5 login-div-col-1' style='padding-top:75px;'>
-        <div style= "width:90%; display:flex; min-height:40vh justify-content:center; align-items:center; background-color:white; margin-top:75px; border-radius:10px; margin:auto; " class='form-div'> 
-    
-
+            <div><?php echo message()?></div>
+            <div style= "width:90%; display:flex; min-height:40vh justify-content:center; align-items:center; background-color:white; margin-top:75px; border-radius:10px; margin:auto; " class='form-div'> 
+                
+                
             <form action="login.php" method= 'POST'  style='width:70%; margin:auto; text-align:center; display:flex; flex-direction:column;  margin-top:50px; ' class='login-form'>
                 <div style='text-align:left; margin-bottom:20px; font-weight:bold;'>Hi, Welcome Back</div>
                 <p class='theP'>Email</p>

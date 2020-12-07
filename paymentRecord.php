@@ -51,7 +51,7 @@
     <div style='flex:1'></div>
     <div>
         <form action="paymentRecord.php" method="POST" style=' margin-bottom:0px ; text-align:right;'>
-            <input type="text" name='search' placeholder='Search by name' style='height:40px; padding:10px; border-radius:10px;'>
+            <input type="text" name='search' placeholder='Search by ID' style='height:40px; padding:10px; border-radius:10px;'>
             <input type="submit" name = "submit" style='height:40px; border-radius:10px; padding:0px 10px; font-weight:bold;'>
         </form>
     </div>
@@ -59,6 +59,7 @@
         <div class='responsive-table'>
             <table class="table table-hover ">
     <thead>
+        <?php echo success() ?>
         <tr style='text-align:center;font-size:18px;'>
                 <th scope="col">id</th>
                 <th scope="col">student_id</th>
@@ -80,7 +81,7 @@
                 
                 if (isset($_POST['submit'])){
                     $search = $_POST['search'];
-                    $Query = "SELECT * FROM payment_record WHERE name LIKE '%$search%'  ORDER BY id DESC";
+                    $Query = "SELECT * FROM payment_record WHERE student_id LIKE '%$search%'  ORDER BY id DESC";
                 }
                 
                 else if (isset($_GET['page'])){
@@ -95,11 +96,11 @@
                     }
 
                     // The $noOfContent takes the index that is the position to start Picking from , Also whatever the no that is used to multiply the page in the first place is also what should be used to be the no of data to be fetched from the database  , if this is not done , then it is definitely sure that mistakes would happen, to be specific omission of data would happen
-                    $Query = "SELECT * FROM payment_record LIMIT $noOfContent,$limit";
+                    $Query = "SELECT * FROM payment_record LIMIT $noOfContent,$limit ORDER BY time DESC";
                 }
                 
                 else{
-                    $Query = "SELECT * FROM payment_record ORDER BY id DESC LIMIT $limit";
+                    $Query = "SELECT * FROM payment_record ORDER BY time DESC LIMIT $limit";
                     
                 }
                 

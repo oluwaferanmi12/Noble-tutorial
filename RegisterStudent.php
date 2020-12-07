@@ -161,10 +161,50 @@
                 $pphone = '';
                 $department = '';
                 $subject = '';
-                $email = '';
                 $display = 'none';
-                header("Location:RegisterStudent.php?email=$emailToCheck");
+                $headers = "From:NobleTutorial<support@nobletutorial.com.ng>"."\r\n";
+                $headers = "MIME-Version: 1.0"."\r\n";
+                $headers = "Content-Type: text/html; charset=UTF-8"."\r\n";
+                $message = "
+                <html> 
+                <body style= 'background:#E0EFDE; min-heigt:100vh; padding-top:50px; padding-bottom:50px;'>
+                                <div style='text-align:center; background-color:white; border-radius:10px; width:80%; margin:auto; height:400px; padding:20px;'>
+                                <div style= 'text-align:left; font-family:cursive;font-weight:bold; font-size:24px;'>Successful Registration</div>
+                                <hr style='width:95%;text-align:left;margin-left:0'>
+                                <div>
+                                        <div style='text-align:left; font-size:20px;'>Thanks For Choosing <span style='font-weight:bolder;'>Noble Tutorial Classes</span>. We are known for delivering results with confidence , please adhere to the rules of the school. </div>
+                                        <div style= 'text-align:left; color:red;'>
+                                        <ol >
+                                                <li style= 'margin-bottom:8px;'>Ensure You Participate fully to class activities like group Discussions and Assignments.</li>
+                                                <li style= 'margin-bottom:8px;'>Late Coming is strictly prohibited.</li>
+                                                <li style= 'margin-bottom:8px;'>Use of Vulgar words and disrespect to tutors and management is not acceptable.</li>
+                                                <li style= 'margin-bottom:8px';>Always Show Your Slip Before Entering</li>
+                                            </ol>
+                                            </div>
+                                            <br>
+                                            <hr style='width:95%;text-align:left;margin-left:0'>
+                                            <div style='font-weight:bolder; font-family:monospace ; font-size:16px'>
+                                            We Believe Your stay in Noble Tutorial Classes will be a productive and Remarkable One .. Welcome to our family...... <br>
+                                        Noble Team <br> <br>
+                                        <span style= 'font-size:12px; font-weight:bold; '>For More Information Visit us at 
+                                        <a href='https://nobletutorial.com.ng' style='text-decoration :none;'>nobletutorial.com.ng</a></span>
+                                        
+                                        </div>
+                                        
 
+                                        </div>
+                                </div>
+                            </body>
+                            </html>
+                            ";
+                $email_to = $email;
+                $email_subject = "Successfull Registrattion";
+                if(mail($email_to , $email_subject , $message , $headers)){
+                    
+                    header("Location:RegisterStudent.php?email=$emailToCheck");
+                }
+                
+                $email = '';
                 
                 
             }
