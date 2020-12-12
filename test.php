@@ -61,7 +61,14 @@
         // $execute = mysqli_query($connection , $query);
         // $rowPagination = mysqli_fetch_array($execute);
         // while ($RowPagination = mysqli_fetch_array($execute)){
-    
+    <div class="pagination">
+              <a href="#"><i class="fa fa-chevron-left"></i></a>
+              <a href="#" class="pages">1</a>
+              <a href="#" class="pages">2</a>
+              <a href="#" class="pages">3</a>
+              <a href="#"><i class="fa fa-chevron-right"></i></a>
+            </div>
+          </div>
         
 
 ?>

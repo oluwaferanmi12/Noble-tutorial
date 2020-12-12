@@ -1,40 +1,44 @@
+<?php include ('connection.php') ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
     "
     />
-    <!-- Owl Carousel Link  -->
+    <!--------------------- Owl Carousel --------------------- -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
-    <!-----------x---- Owl Carousel ---------------x -->
+    <!---------x------------- Owl Carousel ---------x------ -->
+
+    <!---------------- Animation on Scroll ------------ -->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!--------x--------- Animation On scroll -------x--------- -->
+    <!---------------------- jQuery ----------------------- -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+    <!----x-------------------- jQuery --------------------x -->
+
+    <!----------------------- BootStrap -------------------- -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+
+    <!-----------x------------------ Bootstrap  --------x------->
+    <!--------------------- Customised Style ----------------- -->
     <link rel="stylesheet" href="./generalStyle.css?v=<?php echo time() ?>" />
-    <title>Document</title>
+    <!------x--------- Customised Style --------------x -->
+
+    
+    <title>Blog</title>
   </head>
-  <body>
+  <div style='overflow-x:hidden'>
+  <body >
     <!----------------- NavBar ----------------- -->
     <nav class='nav'>
       <div class='nav-content'>
@@ -45,11 +49,12 @@
       
           
         <ul class='nav-menu'>
-          <li class=nav-menu-item><a href="#">Home</a></li>
-          <li class=nav-menu-item><a href="#">About</a></li>
-          <li class=nav-menu-item><a href="#">Blog</a></li>
-          <li class=nav-menu-item><a href="#">Contact</a></li>
-          <li class=nav-menu-item><a href="#">Testimonial</a></li>
+          <li class='nav-menu-item'><a href="#">Home</a></li>
+          <li class='nav-menu-item'><a href="#">About</a></li>
+          <li class='nav-menu-item theactive'><a href="#">Blog</a></li>
+          <li class='nav-menu-item'><a href="#">Contact</a></li>
+          <li class='nav-menu-item'><a href="#">E-Resources</a></li>
+          <li class='nav-menu-item'><a href="#">Testimonial</a></li>
         </ul>
           
           
@@ -80,14 +85,188 @@
     <main>
       <div class="showcase">
         <!-------------------- ShowCase Section  -------------------->
+        <div class='showcase-content'>
+          <h1 data-aos='fade-right' data-aos-delay='500'>Avail Yourself With Great Contents <br> From The Best Creators.</h1>
+          <a href="#"><div data-aos='fade-left' data-aos-delay='700'  class='showcase-button'>Start Exploring</div>
+        </div></a>
 
         <img src="./svg/wavesNegative.svg" alt="" class='showcase-img'>
       </div>
       <!-----x---------------- ShowCase Section  -----------x---------->
+
+      <!------------------------- Advertisement---------------------- -->
+      
+      <div id='advertisement' class='container'>
+        <div class="owl-navigation">
+            <span class="owl-nav-prev"><i class="fa fa-long-arrow-left"></i></span>
+            <span class="owl-nav-next"><i class="fa fa-long-arrow-right"></i></span>
+          </div>
+        
+        <div class="owl-carousel owl-theme advertisement-post" >
+          
+          <div class="advertisement-content " data-aos='fade-up' data-aos-delay='300' >
+            
+            <div class="advert-post">
+              <h1>Change Of Course</h1>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci dignissimos exercitationem </p>
+              <a href="#"><div class='advert-link'>Read</div></a>
+            </div>
+          </div>
+
+          <div class="advertisement-content" data-aos='fade-up' data-aos-delay='300'>
+            
+            <div class="advert-post">
+              <h1>Change Of Course</h1>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci dignissimos exercitationem </p>
+              <a href="#"><div class='advert-link'>Read</div></a>
+            </div>
+          </div>
+
+          <div class="advertisement-content" data-aos='fade-up' data-aos-delay='300' >
+            <div class="advert-post">
+              <h1>Change Of Course</h1>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci dignissimos exercitationem </p>
+              <a href="#"><div class='advert-link'>Read</div></a>
+            </div>
+            
+          </div>
+
+          <div class="advertisement-content" data-aos='fade-up' data-aos-delay='300'>
+            <div class="advert-post">
+              <h1>Change Of Course</h1>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci dignissimos exercitationem </p>
+              <a href="#"><div class='advert-link'>Read</div></a>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+
+      <!----------------- Blog Posts --------- -->
+      
+      <section id='blog-post' class='row'>
+          <div  class="blog-content offset-lg-1 col-lg-7" style= 'border:1px solid red'>
+          <?php
+              $query = "SELECT * FROM blog";
+              $execution = mysqli_query($connection , $query);
+              while($row = mysqli_fetch_array($execution)){
+
+            ?>
+            <div class='blog-showcase' data-aos="zoom-in" data-aos-delay="200" style='border:1px solid blue'>
+              <div class="blog-image">
+                <img src="./upload/<?php echo $row['image'] ?>" alt="">
+              </div>
+              <div class="blog-info">
+                <span><i class="fa fa-user"></i>&nbsp; &nbsp;Admin</span>
+                <span><i class="fa fa-calendar"></i>&nbsp; &nbsp;<?php echo $row['date']; ?></span>
+                
+                <span>2 Comments</span>
+              </div>
+            </div>
+            <div class="blog-title">
+              <a href=""><h1><?php echo $row['header']?></h1></a>
+              <p><?php echo $row['content'] ?></p>
+              <a href="#"><div class='blog-button'>Read More &nbsp; <i class="fa fa-arrow-right"></i></div></a>
+            </div>
+            <hr width='90%'>
+            
+            
+              <?php } ?>
+              
+                <div class="pagination">
+                  <a href="#"><i class="fa fa-chevron-left"></i></a>
+                  <a href="#" class="pages">1</a>
+                  <a href="#" class="pages">2</a>
+                  <a href="#" class="pages">3</a>
+                  <a href="#"><i class="fa fa-chevron-right"></i></a>
+                </div>
+          
+              
+              
+          <!--------x--------- Pagination ---------x--- -->
+          </div>
+<!---------------- sideMenu  --------------------->
+          <div id='sideMenu' class= 'col-lg-3' style='border:1px solid red'>
+            <p>Category</p>
+            <ul class='category-content container'>
+                <li class='category-item' data-aos="fade-left" data-aos-delay="100"><a href="#">Science</a> <span>(2)</span></li>
+                <li class='category-item' data-aos="fade-left" data-aos-delay="200"><a href="#">Technology</a> <span>(2)</span></li>
+                <li class='category-item' data-aos="fade-left" data-aos-delay="300"><a href="#">Politics</a> <span>(2)</span></li>
+                <li class='category-item' data-aos="fade-left" data-aos-delay="400"><a href="#">Football</a> <span>(2)</span></li>
+
+            </ul>
+            
+            <div id='popular-post' >
+              <p>Popular Posts</p>
+              <div class="popular-post ">
+                <div data-aos="flip-up" data-aos-delay="200">
+                    <div class="popular-img">
+                    <img src="./images/blogPost/pexels-redrecords-©️-2872418.jpg" alt="">
+                  </div>
+                  <div class="popular-post-title">
+                    <a href=""><h1>The Impact Of the Media on Our Society.</h1></a>
+                  </div>
+                  <div class="popular-btn">
+                    <a href="#"><div class='blog-button'>Read More &nbsp; <i class="fa fa-arrow-right"></i></div></a>
+                  </div>
+                </div>
+
+                <hr>
+                <div data-aos="flip-up" data-aos-delay="200">
+                  <div class="popular-img">
+                  <img src="./images/blogPost/albert-einstein-1933340_1920.jpg" alt="">
+                </div>
+                <div class="popular-post-title">
+                  <a href=""><h1>Einstein May Not Be The Smartest Man Ever Lived.</h1></a>
+                </div>
+                <div class="popular-btn">
+                  <a href="#"><div class='blog-button'>Read More &nbsp; <i class="fa fa-arrow-right"></i></div></a>
+                </div>
+                </div>
+                <hr>
+
+              </div>
+            </div>
+            
+          </div>
+<!-----x---------- sideMenu  --------------x----->
+      </section>
+
+      <!-----x------- Blog Post  ----x------------>
+      <!------------x------ Advertisement -------------------x- -->
     </main>
 
 
+    <footer class='footer'>
+      <div class='container footer-container'>
+        <div class='about-us'>
+          <p>about us</p>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptas sed hic, odit, id commodi non libero harum iure soluta quis cum nemo similique iste! Soluta, totam! Rerum vitae nulla minima incidunt! Ex molestias in natus, ea a magnam maxime? Quae incidunt architecto aut officia accusamus nam quam voluptatem blanditiis!</div>
+        </div>
+
+        <div class="follow ">
+          <p>Follow Us</p>
+          <div class='l-social'>Let us be Social</div>
+          <div>
+              <i class="fa fa-facebook-f"></i>
+              <i class="fa fa-twitter"></i>
+              <i class="fa fa-instagram"></i>
+              <i class="fa fa-youtube"></i>
+          </div>
+          
+        </div>
+        <div class="move-up">
+          <span><i class="fa fa-arrow-circle-up fa-2x"></i></span>
+        </div>
+      </div>
+
+    </footer>
+
+
   </body>
+  </div>
   <!-- Animation On scroll  -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init()</script>
@@ -95,7 +274,8 @@
   <!-- Owl Carousel js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"></script>
-
+  
+  
   <!-- Customised Js  -->
   <script src="main.js"></script>
   

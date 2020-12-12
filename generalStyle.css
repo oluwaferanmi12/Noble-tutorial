@@ -24,7 +24,8 @@
     --black-4:#393d3f;
     --orange:rgb(220, 73, 58);
     --black-1-opacity:rgba(31, 54, 61 , 0.2);
-    --white-1:#f1faee
+    --white-1:#f1faee;
+    
 
 
 
@@ -35,12 +36,20 @@
 *{
     padding: 0px;
     margin: 0px;
+    
 }
+
+
 body{
     color: var(--black-1);
     margin: 0px;
     padding: 0px;
+    background-color: var(--white-1);
+    /* border: 1px solid red; */
+    /* overflow: auto; */
 }
+
+
 a{
     text-decoration: none;
     color:var(--black-1);
@@ -49,6 +58,15 @@ a{
 a:hover{
     text-decoration: none;
     color: black;
+}
+
+.nav .nav-menu  .theactive{
+    background-color: var(--black-1) !important;
+    color: var(--white-1) ;
+}
+
+.nav .nav-menu .theactive a{
+    color: var(--white-1) !important;
 }
 
 
@@ -72,10 +90,11 @@ a:hover{
 
 .collapse{
     height: 70vh;
+    
 }
 
 .new-height{
-    height: 70vh;
+    height: 75vh;
 }
 
 .nav .nav-brand .nav-brand-item{
@@ -148,10 +167,12 @@ a:hover{
 /*------------------------ ShowCase ----------------------------- */
 
 main .showcase{
-    background-image: linear-gradient(rgba(220, 73, 58,0.5) , rgba(220, 73, 58,0.5)), url('./images/blogPost/pexels-redrecords-©️-2872418.jpg');
+    background-image: linear-gradient(rgba(220, 73, 58,0.5) , rgba(220, 73, 58,0.5)), url('./images/blogPost/pexels-luriko-yamaguchi-2761017.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-attachment: fixed;
+    /* width: 100%; */
     
     /* background-attachment: fixed; */
     height: 100vh;
@@ -163,9 +184,351 @@ main .showcase-img{
     bottom: 0px;
     
 }
+
+main .showcase .showcase-content{
+    color: white;
+    width: 60%;
+    padding: 100px 50px;
+    font-family: var(--Abel);
+}
+
+main .showcase .showcase-button{
+    border: 1px solid var(--white-1);
+    font-size: 25px;
+    width: 60%;
+    text-align: center;
+    color:var(--white-1) !important;
+    height: 60px;
+    margin-top: 30px;
+    padding-top: 10px;
+    transition: 0.2s;
+
+}
+
+main .showcase .showcase-content a{
+    color: var(--white-1) !important;
+    
+}
+
+main .showcase .showcase-button:hover{
+    background: rgba(220, 73, 58,0.5);
+    border: none;
+    outline: none;
+}
+
+
+
 /*------------x------------ ShowCase ----------------x------------- */
 
+/* ---------------------Advertisement -------------------- */
+
+
+main #advertisement{
+    position: relative;
+    
+}
+
+main #advertisement .advertisement-post .advertisement-content{
+    padding-top: 2rem !important;
+    box-shadow: 0 15px 20px rgba(0 , 0 , 0 ,0.2);
+    height: 300px;
+    margin: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    background: white;
+    border-radius: 20px;
+    
+
+    /* height: 200px; */
+    
+    
+}
+
+main #advertisement .advertisement-post {
+    padding-top: 50px;
+}
+
+main #advertisement .advertisement-post .advertisement-content h1{
+    font-size: 30px;
+    padding-bottom: 10px;
+    font-family: var(--roboto);
+}
+
+main #advertisement .advertisement-post .advertisement-content p{
+    font-family: var(--Josefin);
+}
+
+
+main #advertisement .advert-post .advert-link{
+    width: 100%;
+    border: 1px solid var(--orange);
+    font-family: var(--Abel);
+    height: 40px;
+    padding-top: 2px;
+    font-size: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    transition: 0.5s;
+}
+
+main #advertisement .advert-post .advert-link:hover{
+    background-color: var(--orange);
+    color: white;
+}
+
+main #advertisement .owl-nav{
+    position: absolute;
+    top: 0px;
+    left: 46%;
+
+}
+
+main #sideMenu p{
+    font-family: var(--roboto);
+    font-size: 24px;
+}
+
+main #sideMenu .category-content{
+    list-style: none;
+    padding: 20px 30px;
+    font-family: var(--Josefin);
+
+}
+
+main #sideMenu .category-content .category-item{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    background-color: var(--orange);
+    height: 40px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    color: var(--white-1);
+}
+
+main #sideMenu .category-content .category-item a{
+    color: var(--white-1);
+}
+
+main #sideMenu #popular-post .popular-post .popular-img{
+    width: 100%;
+    height: 300px;
+    padding-top: 10px;
+    
+}
+
+main #sideMenu #popular-post .popular-post .popular-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+main #sideMenu #popular-post .popular-post .popular-img .popular-img-info{
+    background-color: var(--orange);
+    
+}
+
+main #sideMenu #popular-post .popular-post .popular-post-title h1{
+    font-size: 24px;
+    padding-bottom: 10px;
+    padding-top: 4px;
+    font-family: var(--roboto);
+    font-weight: bold;
+    
+}
+
+main #sideMenu #popular-post .popular-post .popular-post-title p{
+    font-size: 16px;
+    font-family: var(--Lexend);
+}
+
+main #sideMenu #popular-post .popular-post .popular-btn{
+    background-color: var(--orange);
+    padding: 10px 20px;
+    width: 60%;
+    color: var(--white-1) !important;
+    border-radius: 4px;
+}
+
+main #sideMenu #popular-post .popular-post .popular-btn a{
+    color: var(--white-1);
+    font-family: var(--Noto);
+    
+}
+
+/*------------------- pagination -------------- */
+.blog-content .pagination{
+    display: flex;
+    justify-content: center;
+    color: var(--text-gray);
+    margin: 4rem 0;
+}
+
+.blog-content .pagination a{
+    padding: .6rem .9rem;
+    /* border-radius: 2rem; */
+    margin: 0.3rem;
+    font-family: var(--Lexend);
+    color: white !important;
+}
+
+.blog-content .pagination i {
+    color: var(--black-1);
+}
+
+.blog-content .pagination .pages{
+    border-radius: 2rem;
+    background: var(--black-1);
+}
+
+/*---------x------------ pagination -------------x------- */
+
+
+
+
+
+
+/*--------------x---------------- Advertisement ---------x------------------ */
+
+/*-------------------------- Blog Post  ---------------------*/
+main #blog-post{
+    margin-top: 50px;
+    /* display: grid; */
+    /* grid-template-columns:70% 30%; */
+    
+}
+
+main #blog-post .blog-content .blog-image{
+    width: 90%;
+    height: 500px;
+}
+
+main #blog-post .blog-content .blog-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+main #blog-post .blog-content .blog-title{
+    width: 90%;
+}
+
+main #blog-post .blog-content .blog-showcase{
+    position: relative;
+}
+
+main #blog-post .blog-content .blog-showcase .blog-info{
+    background-color: var(--orange);
+    padding: 15px 30px 20px 30px;
+    width: 60%;
+    height: 60px;
+    position: absolute;
+    left: 50px;
+    bottom: -15px;
+    border-radius: 10px;
+    color: var(--white-1);
+    font-family: var(--Lexend);
+}
+
+main #blog-post .blog-content .blog-showcase .blog-info span{
+    margin-right: 8px;
+}
+
+main #blog-post .blog-content .blog-title h1{
+    padding-top: 20px;
+    font-family: var(--Lexend);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+main #blog-post .blog-content .blog-title .blog-button{
+
+}
+
+main #blog-post .blog-content .blog-title p{
+    font-family: var(--Lexend);
+    width: 80%;
+    
+}
+
+main #blog-post .blog-content .blog-title .blog-button{
+    background-color: var(--orange);
+    padding: 8px 30px;
+    width: 25%;
+    height: 40px;
+    color: var(--white-1);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-family: var(--roboto);
+}
+
+
+/*------------x---------- Blog Post ---------x------------- */
 /*--------x----------------- main ----------x----------- */
+
+/*-------------------- Footer -------------------- */
+footer.footer{
+    height: 100%;
+    background-color: var(--black-1);
+    color: var(--white-1);
+    padding-top: 30px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+footer .footer-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+footer.footer .footer-container p{
+    font-size: 24px;
+    font-family: var(--Abel);
+    font-weight: bold;
+    /* padding-bottom: 20px; */
+}
+
+footer.footer .about-us{
+    padding-left: 10px;
+}
+
+footer.footer .about-us div{
+    width: 80%;
+    font-family: var(--Josefin);
+    color: rgb(241, 250, 238 ,0.5);
+    font-weight: 500;
+    padding-left: 20px;
+}
+
+footer.footer .follow{
+    padding-left: 10px;
+}
+
+footer.footer .follow div{
+    padding-left: 20px;
+}
+
+
+
+footer.footer .follow .l-social{
+    font-size: 20px;
+    font-family: var(--Lexend);
+    color: rgb(241, 250, 238 ,0.5);
+
+
+}
+
+footer.footer .follow i{
+    padding: 10px;
+    font-size: 20px;
+}
+
+footer.footer .move-up{
+    position: absolute;
+    left: 90%;
+    bottom: 30%;
+}
+/*---------x------- Footer -------------x-- */
 
 
 @media (max-width:960px){
@@ -183,9 +546,57 @@ main .showcase-img{
         flex-direction: column !important;
         
     }
+    main .showcase .showcase-content{
+        width: 90%;
+        
+    }
+
+    main .showcase .showcase-button{
+        width: 100%;
+    }
+
+    .nav .nav-menu .nav-menu-item{
+        border-bottom: 1px solid var(--black-1-opacity);
+    }
+
+    main #blog-post{
+        padding:20px;
+    }
+
+    main #blog-post .blog-content .blog-image{
+        width: 100%;
+        height: 300px;
+    }
+    main #blog-post .blog-content .blog-showcase .blog-info{
+        width: 85% !important;
+        left: 10px !important;
+        padding: 10px 30px 20px 30px;
+    }
+    main #blog-post .blog-content .blog-title .blog-button{
+        width: 60%;
+    }
+    main #blog-post .blog-content .blog-title p{
+        width: 90%;
+    
+        /* text-align: justify; */
+    }
+
+    footer .footer-container{
+        display: grid;
+        grid-template-columns: 100%;
+    }
 
 
     
+
+
+    
+}
+
+@media (max-width:450px){
+    main #advertisement .owl-nav{
+        left:37% !important;
+    }
 }
 
 

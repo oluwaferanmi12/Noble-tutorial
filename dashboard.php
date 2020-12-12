@@ -132,6 +132,15 @@
             <!-- Next Column -->
             <div class="col-lg-4">
                 <div class='theContent'>
+                    <p>Advertisement</p>
+                    <i class="fa fa-get-pocket"></i>
+                    <a href="getPayment.php"  target='_blank'><div class="theLinkDiv">Get</div></a>
+                </div>
+            </div>
+
+            <!-- Next Column -->
+            <div class="col-lg-4">
+                <div class='theContent'>
                     <p>Manage Access</p>
                     <i class="fa fa-wheelchair"></i>
                     <a href="manageAccess.php"  target='_blank'><div class="theLinkDiv">Manage</div></a>
