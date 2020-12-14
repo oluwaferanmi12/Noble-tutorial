@@ -4,7 +4,9 @@
 $blog = @$_GET['blogId'];
 $query = "SELECT * FROM blog WHERE id='$blog'";
 $execution = mysqli_query($connection , $query);
-$row = mysqli_fetch_array($execution)
+$row = mysqli_fetch_array($execution);
+$url = "upload/".$row['content'];
+$theContent = file_get_contents($url);
 
 ?>
 
@@ -25,7 +27,7 @@ $row = mysqli_fetch_array($execution)
                 </div>
                 <div class="blog-title">
                 <a href=""><h1><?php echo $row['header']?></h1></a>
-                <p><?php echo $row['content']?></p>
+                <p><?php echo $theContent ?></p>
                 
                 </div>
             </div>

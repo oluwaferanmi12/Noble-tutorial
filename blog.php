@@ -170,9 +170,11 @@
               }
               
               $start = ($page - 1) * $limit;
-              $query = "SELECT * FROM blog ORDER BY id DESC LIMIT $start , $limit";
+              $query = "SELECT * FROM blog ORDER BY id DESC LIMIT $start, $limit";
               $execution = mysqli_query($connection , $query);
               while($row = mysqli_fetch_array($execution)){
+                $url = 'upload/'.$row['content'];
+                $thecontent = file_get_contents($url);
 
             ?>
             <div class='blog-showcase' data-aos="zoom-in" data-aos-delay="200">
@@ -188,7 +190,7 @@
             </div>
             <div class="blog-title">
               <a href=""><h1><?php echo $row['header']?></h1></a>
-              <p><?php echo substr($row['content'] ,0 , 300) ?> ......</p>
+              <p><?php echo substr($thecontent , 0, 200)  ?> ......</p>
               <a href="fullBlogPost.php?blogId=<?php echo $row['id'] ?>"><div class='blog-button'>Read More &nbsp; <i class="fa fa-arrow-right"></i></div></a>
             </div>
             <hr width='90%'>
