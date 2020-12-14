@@ -110,6 +110,31 @@
                         <a href="forgotId.php"  target='_blank'><div class="theLinkDiv">Edit</div>
                     </div></a>
                 </div>
+            <!-- Next Column -->
+                <div class="col-lg-4">
+                    <div class='theContent'>
+                        <p>Category</p>
+                        <i class="fa fa-edit"></i>
+                        <a href="category.php"  target='_blank'><div class="theLinkDiv">Add</div>
+                    </div></a>
+                </div>
+            <!-- Next Column -->
+                <div class="col-lg-4">
+                    <div class='theContent'>
+                        <p>Insert-Blog</p>
+                        <i class="fa fa-edit"></i>
+                        <a href="forgotId.php"  target='_blank'><div class="insertBlog.php">Insert</div>
+                    </div></a>
+                </div>
+
+            <!-- Next Column -->
+                <div class="col-lg-4">
+                    <div class='theContent'>
+                        <p>Advertisement</p>
+                        <i class="fa fa-edit"></i>
+                        <a href="forgotId.php"  target='_blank'><div class="theLinkDiv">Add</div>
+                    </div></a>
+                </div>
 
                 
             <!-- Next Column -->

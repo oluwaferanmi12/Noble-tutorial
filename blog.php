@@ -147,14 +147,35 @@
       <!----------------- Blog Posts --------- -->
       
       <section id='blog-post' class='row'>
-          <div  class="blog-content offset-lg-1 col-lg-7" style= 'border:1px solid red'>
+          <div  class="blog-content offset-lg-1 col-lg-7">
           <?php
-              $query = "SELECT * FROM blog";
+              $query_no = "SELECT count(id) FROM blog";
+              $execution_no =  mysqli_query($connection , $query_no);
+              $row_no = mysqli_fetch_array($execution_no);
+              $noOfBlog = $row_no[0];
+              $limit = 5;
+              $pages = ceil($noOfBlog/$limit);
+              
+              if(isset($_GET['page'])){
+                $page = $_GET['page'];
+                if ($page > $pages){
+                  $page =$pages;
+                }
+                else if($page < 1){
+                  $page = 1;
+                }
+              }
+              else{
+                $page = 1;
+              }
+              
+              $start = ($page - 1) * $limit;
+              $query = "SELECT * FROM blog ORDER BY id DESC LIMIT $start , $limit";
               $execution = mysqli_query($connection , $query);
               while($row = mysqli_fetch_array($execution)){
 
             ?>
-            <div class='blog-showcase' data-aos="zoom-in" data-aos-delay="200" style='border:1px solid blue'>
+            <div class='blog-showcase' data-aos="zoom-in" data-aos-delay="200">
               <div class="blog-image">
                 <img src="./upload/<?php echo $row['image'] ?>" alt="">
               </div>
@@ -167,8 +188,8 @@
             </div>
             <div class="blog-title">
               <a href=""><h1><?php echo $row['header']?></h1></a>
-              <p><?php echo $row['content'] ?></p>
-              <a href="#"><div class='blog-button'>Read More &nbsp; <i class="fa fa-arrow-right"></i></div></a>
+              <p><?php echo substr($row['content'] ,0 , 300) ?> ......</p>
+              <a href="fullBlogPost.php?blogId=<?php echo $row['id'] ?>"><div class='blog-button'>Read More &nbsp; <i class="fa fa-arrow-right"></i></div></a>
             </div>
             <hr width='90%'>
             
@@ -176,11 +197,29 @@
               <?php } ?>
               
                 <div class="pagination">
-                  <a href="#"><i class="fa fa-chevron-left"></i></a>
-                  <a href="#" class="pages">1</a>
-                  <a href="#" class="pages">2</a>
-                  <a href="#" class="pages">3</a>
-                  <a href="#"><i class="fa fa-chevron-right"></i></a>
+                  <?php 
+                    if($page > 1){
+                    
+                    ?>
+                      <a href="blog.php?page=<?php echo $page - 1 ?>"><i class="fa fa-chevron-left"></i></a>
+
+                  <?php } ?>
+                  <?php for($i = 1; $i <= $pages; $i++){
+
+                  ?>
+                  <a href="blog.php?page=<?php echo $i ?>" class="pages"><?php echo $i; ?></a>
+                  <?php } ?>
+                  
+
+                    <?php 
+                      if ($page < $pages){
+
+                      
+                    ?>
+                    <a href="blog.php?page=<?php echo $page + 1 ?>"><i class="fa fa-chevron-right"></i></a>
+
+                    <?php } ?>
+                  
                 </div>
           
               
@@ -188,44 +227,47 @@
           <!--------x--------- Pagination ---------x--- -->
           </div>
 <!---------------- sideMenu  --------------------->
-          <div id='sideMenu' class= 'col-lg-3' style='border:1px solid red'>
+          <div id='sideMenu' class= 'col-lg-3' >
             <p>Category</p>
             <ul class='category-content container'>
-                <li class='category-item' data-aos="fade-left" data-aos-delay="100"><a href="#">Science</a> <span>(2)</span></li>
-                <li class='category-item' data-aos="fade-left" data-aos-delay="200"><a href="#">Technology</a> <span>(2)</span></li>
-                <li class='category-item' data-aos="fade-left" data-aos-delay="300"><a href="#">Politics</a> <span>(2)</span></li>
-                <li class='category-item' data-aos="fade-left" data-aos-delay="400"><a href="#">Football</a> <span>(2)</span></li>
+            <?php 
+              $query = "SELECT * FROM category";
+              $execution = mysqli_query($connection , $query);
+              while($row=mysqli_fetch_array($execution)){
+
+            ?>
+                <li class='category-item' data-aos="fade-left" data-aos-delay="100"><a href="#"><?php echo $row['newcategory']?></a> </li>
+                
+                <?php } ?>
 
             </ul>
             
             <div id='popular-post' >
               <p>Popular Posts</p>
               <div class="popular-post ">
-                <div data-aos="flip-up" data-aos-delay="200">
-                    <div class="popular-img">
-                    <img src="./images/blogPost/pexels-redrecords-©️-2872418.jpg" alt="">
+                <div >
+                    <?php 
+                      $query = "SELECT * FROM blog ORDER BY ID desc LIMIT 7";
+                      $execution = mysqli_query($connection , $query);
+                      while ($row= mysqli_fetch_array($execution)){
+
+                      
+
+                    ?>
+                    <div class="popular-img" data-aos="flip-up" data-aos-delay="200">
+                    <img src="./upload/<?php echo $row['image'] ?>" alt="">
                   </div>
                   <div class="popular-post-title">
-                    <a href=""><h1>The Impact Of the Media on Our Society.</h1></a>
+                    <a href=""><h1><?php echo $row['header']?></h1></a>
                   </div>
                   <div class="popular-btn">
-                    <a href="#"><div class='blog-button'>Read More &nbsp; <i class="fa fa-arrow-right"></i></div></a>
+                    <a href="fullBlogPost.php?blogId=<?php echo $row['id'] ?>"><div class='blog-button'>Read More &nbsp; <i class="fa fa-arrow-right"></i></div></a>
                   </div>
+                <hr>
+                  <?php } ?>
                 </div>
 
-                <hr>
-                <div data-aos="flip-up" data-aos-delay="200">
-                  <div class="popular-img">
-                  <img src="./images/blogPost/albert-einstein-1933340_1920.jpg" alt="">
-                </div>
-                <div class="popular-post-title">
-                  <a href=""><h1>Einstein May Not Be The Smartest Man Ever Lived.</h1></a>
-                </div>
-                <div class="popular-btn">
-                  <a href="#"><div class='blog-button'>Read More &nbsp; <i class="fa fa-arrow-right"></i></div></a>
-                </div>
-                </div>
-                <hr>
+              
 
               </div>
             </div>

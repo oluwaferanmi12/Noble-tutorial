@@ -137,6 +137,23 @@
                     <a href="getPayment.php"  target='_blank'><div class="theLinkDiv">Get</div></a>
                 </div>
             </div>
+            <!-- Next Column -->
+            <div class="col-lg-4">
+                <div class='theContent'>
+                    <p>Category</p>
+                    <i class="fa fa-get-pocket"></i>
+                    <a href="category.php"  target='_blank'><div class="theLinkDiv">Get</div></a>
+                </div>
+            </div>
+
+            <!-- Next Column -->
+            <div class="col-lg-4">
+                <div class='theContent'>
+                    <p>Insert-Blog</p>
+                    <i class="fa fa-get-pocket"></i>
+                    <a href="insertBlog.php"  target='_blank'><div class="theLinkDiv">Insert</div></a>
+                </div>
+            </div>
 
             <!-- Next Column -->
             <div class="col-lg-4">
