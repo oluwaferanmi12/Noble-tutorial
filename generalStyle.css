@@ -530,6 +530,52 @@ footer.footer .move-up{
 }
 /*---------x------- Footer -------------x-- */
 
+/*---------------- Comment  ------------------*/
+.comment p{
+    font-family: var(--Lexend);
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+    
+
+}
+
+.comment input{
+    height: 40px;
+    width: 70%;
+    padding-left:10px ;
+    border: 1px solid var(--black-1-opacity);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-family: var(--Abel);
+    font-weight: bold;
+}
+
+.comment input:focus{
+    outline: none;
+    border: 1px solid var(--black-1);
+}
+
+.comment input.commentContent{
+    height: 60px;
+}
+
+.comment input.commentSubmit{
+    margin-top: 8px;
+    background-color:var(--orange);
+    border: 1px solid var(--orange);
+    color: white;
+    transition: 0.3s;
+}
+
+.comment input.commentSubmit:hover{
+    background-color: transparent;
+    border: 1px solid var(--orange);
+    color: black;
+}
+
+/*--------------------- Comment ---------------- */
+
 
 @media (max-width:960px){
     .nav .toggle-collapse{

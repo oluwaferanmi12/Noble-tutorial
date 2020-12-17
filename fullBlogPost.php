@@ -1,7 +1,10 @@
 <?php include ('connection.php') ?>
+<?php include ('session.php');?>
 <?php include('components/header_2.php')?>
+<?php include('functions.php') ?>
+
 <?php 
-$blog = @$_GET['blogId'];
+$blog = isset($_GET['blogId'])? $_GET['blogId']: $_GET['theBlog'];
 $query = "SELECT * FROM blog WHERE id='$blog'";
 $execution = mysqli_query($connection , $query);
 $row = mysqli_fetch_array($execution);
@@ -87,7 +90,56 @@ $theContent = file_get_contents($url);
                 <?php } ?>
                 </div>
 
-                
+                <?php 
+                    if (isset($_GET['commentSubmit'])){
+                        $theBlog = $_GET['theBlog'];
+                        $commentEmail = $_GET['email'];
+                        $commentInput = $_GET['commentContent'];
+                        if (empty($commentEmail) || empty($commentInput)){
+                            $_SESSION["ErrorMessage"] = 'All Fields Are Required';
+                        }
+                        else{
+                            $query = "INSERT INTO comments(blogid , email , comment) VALUES ('$theBlog','$commentEmail' , '$commentInput')";
+                            $execution = mysqli_query($connection , $query);
+                            if($execution){
+                                $_SESSION['SuccessMessage'] = "Comment Added";
+                                $query = "SELECT count(blogid) FROM comments WHERE blogid='$theBlog'";
+                                    $execution = mysqli_query($connection , $query);
+                                    
+                                    if($execution){
+                                        echo "it Got here";
+                                        $commentRow = mysqli_fetch_array($execution);
+                                        $totalNoOfComment = $commentRow[0];
+                                        echo $totalNoOfComment ;
+                                        $NoOfComment = $totalNoOfComment ;
+                                        $query = "UPDATE blog SET comment= '$NoOfComment' WHERE id= '$theBlog'";
+                                        $execution = mysqli_query($connection , $query);
+                                        
+                                    }
+
+
+                                
+
+
+                            }
+                        }
+                    }
+                ?>
+
+                <div class='comment'>
+                    <?php echo message() ;?>
+                    <?php echo success() ;?>
+                    <form method ="GET" action="fullBlogPost.php?blogId=<?php echo $blog ?>" >
+                        <input type="hidden" name='theBlog'  value ='<?php echo $blog ?>'>
+                        <p>Email</p>
+                        <input type="email" name='email' placeholder='Enter a Valid Mail '>
+
+                        <p>Post A Comment</p>
+                        <input class='commentContent' name='commentContent' type="text" maxlength='50' placeholder = 'Maximum of 50 Characters'>
+                        <br>
+                        <input type="submit" class='commentSubmit' value='Submit' name='commentSubmit'>
+                    </form>
+                </div>
         </div>
 
         

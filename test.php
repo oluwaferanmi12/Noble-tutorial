@@ -83,6 +83,12 @@
     // echo $newTime . "<br>";
     // echo $futureTime - $newTime ;
     // // echo $futureTime - $dateTime;
-        
+    
+    $blog = 1 ;
+    echo @$_GET['']
 ?>
+
+<form action="test.php?blog= ".<?php echo $blog ?> method= "GET">
+    <input type="text">
+</form>
 

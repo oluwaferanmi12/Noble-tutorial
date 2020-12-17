@@ -185,7 +185,7 @@
                 <span><i class="fa fa-user"></i>&nbsp; &nbsp;Admin</span>
                 <span><i class="fa fa-calendar"></i>&nbsp; &nbsp;<?php echo $row['date']; ?></span>
                 
-                <span>2 Comments</span>
+                <span><?php echo $row['comment']?> Comments</span>
               </div>
             </div>
             <div class="blog-title">
