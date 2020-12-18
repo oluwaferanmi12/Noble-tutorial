@@ -574,6 +574,34 @@ footer.footer .move-up{
     color: black;
 }
 
+.theComment {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.theComment p {
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--Abel);
+    font-weight:bold;
+    font-size: 20px;
+}
+
+.theComment span{
+    font-size: 12px;
+    font-weight:bold;
+}
+
+.showComment{
+    width: 70%;
+    padding-top: 30px;
+}
+
+
+
 /*--------------------- Comment ---------------- */
 
 
@@ -622,7 +650,7 @@ footer.footer .move-up{
         width: 60%;
     }
     main #blog-post .blog-content .blog-title p{
-        width: 90%;
+        width: 100%;
     
         /* text-align: justify; */
     }
@@ -631,7 +659,16 @@ footer.footer .move-up{
         display: grid;
         grid-template-columns: 100%;
     }
+    .showComment{
+        width: 100% !important;
+    }
+    
+    
 
+    .comment form input{
+        width: 100%;
+    
+    }
 
     
 

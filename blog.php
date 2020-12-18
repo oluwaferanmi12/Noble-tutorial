@@ -160,17 +160,30 @@
                 $page = $_GET['page'];
                 if ($page > $pages){
                   $page =$pages;
+                  $start = ($page - 1) * $limit;
+                  $query = "SELECT * FROM blog ORDER BY id DESC LIMIT $start, $limit";
                 }
                 else if($page < 1){
                   $page = 1;
+                  $start = ($page - 1) * $limit;
+                  $query = "SELECT * FROM blog ORDER BY id DESC LIMIT $start, $limit";
                 }
               }
-              else{
-                $page = 1;
+
+              else if(isset($_GET['category'])){
+                  $nameOfCategory = $_GET['category'];
+                  $query = "SELECT * FROM blog WHERE  category = '$nameOfCategory' ORDER BY id desc limit 15";
+                  $display = 'none';
+                  $page = 1 ;
               }
               
-              $start = ($page - 1) * $limit;
-              $query = "SELECT * FROM blog ORDER BY id DESC LIMIT $start, $limit";
+              else{
+                $page = 1;
+                $start = ($page - 1) * $limit;
+                $query = "SELECT * FROM blog ORDER BY id DESC LIMIT $start, $limit";
+              }
+              
+              
               $execution = mysqli_query($connection , $query);
               while($row = mysqli_fetch_array($execution)){
                 $url = 'upload/'.$row['content'];
@@ -198,7 +211,7 @@
             
               <?php } ?>
               
-                <div class="pagination">
+                <div class="pagination" style='display:<?php echo $display ?>'>
                   <?php 
                     if($page > 1){
                     
@@ -238,7 +251,7 @@
               while($row=mysqli_fetch_array($execution)){
 
             ?>
-                <li class='category-item' data-aos="fade-left" data-aos-delay="100"><a href="#"><?php echo $row['newcategory']?></a> </li>
+                <a href="blog.php?category=<?php echo $row['newcategory']?>"><li class='category-item' data-aos="fade-left" data-aos-delay="100"><?php echo $row['newcategory']?></li></a> 
                 
                 <?php } ?>
 
@@ -246,10 +259,10 @@
             
             <div id='popular-post' >
               <p>Popular Posts</p>
-              <div class="popular-post ">
+              <div class="popular-post">
                 <div >
                     <?php 
-                      $query = "SELECT * FROM blog ORDER BY ID desc LIMIT 7";
+                      $query = "SELECT * FROM blog ORDER BY comment desc LIMIT 7";
                       $execution = mysqli_query($connection , $query);
                       while ($row= mysqli_fetch_array($execution)){
 

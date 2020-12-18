@@ -135,10 +135,35 @@ $theContent = file_get_contents($url);
                         <input type="email" name='email' placeholder='Enter a Valid Mail '>
 
                         <p>Post A Comment</p>
-                        <input class='commentContent' name='commentContent' type="text" maxlength='50' placeholder = 'Maximum of 50 Characters'>
+                        <input class='commentContent' name='commentContent' type="text" maxlength='150' placeholder = 'Maximum of 150 Characters'>
                         <br>
                         <input type="submit" class='commentSubmit' value='Submit' name='commentSubmit'>
                     </form>
+                </div>
+
+                <div class= 'showComment'>
+                <?php 
+
+                    $particularCommentId = isset($_GET['blogId'])? $_GET['blogId']: $_GET['theBlog'] ;
+                    $query = "SELECT * FROM comments WHERE blogid='$particularCommentId' ORDER BY ID desc ";
+                    $commentResult = mysqli_query($connection , $query);
+                    while($row = mysqli_fetch_array($commentResult)){
+
+                    
+                ?>
+                    <div class= 'theComment'>
+                        <div>
+                            <i class="fa fa-user"></i>
+                        
+                        
+                        <span><?php echo $row['email']?></span>
+                        &nbsp;
+                        </div>
+
+                        <p> &nbsp; <?php echo $row['comment'] ?></p>  
+                    </div>
+                    <hr style='width:100%;'>
+                    <?php } ?>
                 </div>
         </div>
 
@@ -152,14 +177,70 @@ $theContent = file_get_contents($url);
                 while($row=mysqli_fetch_array($execution)){
 
             ?>
-                <li class='category-item' data-aos="fade-left" data-aos-delay="100"><a href="#"><?php echo $row['newcategory']?></a> </li>
+                <li class='category-item' data-aos="fade-left" data-aos-delay="100"><a href="blog.php?category=<?php echo $row['newcategory']?>"><?php echo $row['newcategory']?></a> </li>
                 
                 <?php } ?>
 
             </ul>
+
+            <div id='popular-post' >
+                <p>Popular Posts</p>
+                <div class="popular-post">
+                    <div >
+                        <?php 
+                        $query = "SELECT * FROM blog ORDER BY comment desc LIMIT 5";
+                        $execution = mysqli_query($connection , $query);
+                        while ($row= mysqli_fetch_array($execution)){
+
+                        
+
+                        ?>
+                        <div class="popular-img" data-aos="flip-up" data-aos-delay="200">
+                            <img src="./upload/<?php echo $row['image'] ?>" alt="">
+                        </div>
+                    <div class="popular-post-title">
+                        <a href=""><h1><?php echo $row['header']?></h1></a>
+                    </div>
+                    <div class="popular-btn">
+                        <a href="fullBlogPost.php?blogId=<?php echo $row['id'] ?>"><div class='blog-button'>Read More &nbsp; <i class="fa fa-arrow-right"></i></div></a>
+                    </div>
+                    <hr>
+                    <?php } ?>
+                    </div>
+
+                
+
+                </div>
+            </div>
             
         </div>
 </main>
+
+<footer class='footer'>
+        <div class='container footer-container'>
+        
+            <div class='about-us'>
+            <p>about us</p>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptas sed hic, odit, id commodi non libero harum iure soluta quis cum nemo similique iste! Soluta, totam! Rerum vitae nulla minima incidunt! Ex molestias in natus, ea a magnam maxime? Quae incidunt architecto aut officia accusamus nam quam voluptatem blanditiis!</div>
+            </div>
+
+            <div class="follow ">
+            <p>Follow Us</p>
+            <div class='l-social'>Let us be Social</div>
+            <div>
+                <i class="fa fa-facebook-f"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-youtube"></i>
+            </div>
+            
+            </div>
+            <div class="move-up">
+            <span><i class="fa fa-arrow-circle-up fa-2x"></i></span>
+            </div>
+        </div>
+
+</footer>
 
 
 <?php include('components/end.php')?>
