@@ -84,11 +84,11 @@
     // echo $futureTime - $newTime ;
     // // echo $futureTime - $dateTime;
     
-    $blog = 1 ;
-    echo @$_GET['']
+        $currentTime = time();
+        $dateTime = strftime("%d-%b-%Y @ %H:%M" , $currentTime);
+        echo $dateTime ;
+    
 ?>
 
-<form action="test.php?blog= ".<?php echo $blog ?> method= "GET">
-    <input type="text">
-</form>
+
 

@@ -23,7 +23,7 @@ $theContent = file_get_contents($url);
                 <div class="blog-info">
                     <span><i class="fa fa-user"></i>&nbsp; &nbsp;Admin</span>
                     <span><i class="fa fa-calendar"></i>&nbsp; &nbsp;<?php echo $row['date']; ?></span>
-                    <span>2 Comments</span>
+                    <span><?php echo $row['comment']?> Comments</span>
                 </div>
                 </div>
                 <div class="blog-title">
@@ -95,11 +95,14 @@ $theContent = file_get_contents($url);
                         $theBlog = $_GET['theBlog'];
                         $commentEmail = $_GET['email'];
                         $commentInput = $_GET['commentContent'];
+                        $currentTime = time();
+                        $dateTime = strftime("%d-%b-%Y @ %H:%M" , $currentTime);
+
                         if (empty($commentEmail) || empty($commentInput)){
                             $_SESSION["ErrorMessage"] = 'All Fields Are Required';
                         }
                         else{
-                            $query = "INSERT INTO comments(blogid , email , comment) VALUES ('$theBlog','$commentEmail' , '$commentInput')";
+                            $query = "INSERT INTO comments(blogid , email , comment , date) VALUES ('$theBlog','$commentEmail' , '$commentInput', '$dateTime')";
                             $execution = mysqli_query($connection , $query);
                             if($execution){
                                 $_SESSION['SuccessMessage'] = "Comment Added";
@@ -161,6 +164,7 @@ $theContent = file_get_contents($url);
                         </div>
 
                         <p> &nbsp; <?php echo $row['comment'] ?></p>  
+                        <div class='commentDate'><?php echo $row['date']?></div>
                     </div>
                     <hr style='width:100%;'>
                     <?php } ?>

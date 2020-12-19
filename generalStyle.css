@@ -574,12 +574,23 @@ footer.footer .move-up{
     color: black;
 }
 
+
 .theComment {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 0px;
     padding: 0px;
     
+}
+
+.theComment .commentDate{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    font-family: var(--Abel);
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .theComment p {

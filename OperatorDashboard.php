@@ -123,7 +123,15 @@
                     <div class='theContent'>
                         <p>Insert-Blog</p>
                         <i class="fa fa-edit"></i>
-                        <a href="forgotId.php"  target='_blank'><div class="insertBlog.php">Insert</div>
+                        <a href="forgotId.php"  target='_blank'><div class="theLinkDiv">Insert</div>
+                    </div></a>
+                </div>
+            <!-- Next Column -->
+                <div class="col-lg-4">
+                    <div class='theContent'>
+                        <p>Edit Blog</p>
+                        <i class="fa fa-edit"></i>
+                        <a href="editBlog.php"  target='_blank'><div class="theLinkDiv">Edit</div>
                     </div></a>
                 </div>
 
