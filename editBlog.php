@@ -30,7 +30,8 @@
     $next = $particularPage + 1; 
     
 ?>
-    <nav aria-label="Page navigation example">
+    <div style='display:flex; justify-content:space-between;'>
+        <nav aria-label="Page navigation example">
         <ul class="pagination">
         <?php 
             if ($particularPage > 1){
@@ -63,9 +64,10 @@
     </nav>
     <div >
         <form action="editBlog.php" method="POST" style='float:right; margin-bottom:20px '>
-            <input type="text" name='search' placeholder='Search by name' style='height:40px; padding:10px; border-radius:10px;'>
+            <input type="text" name='search' placeholder='Search by title' style='height:40px; padding:10px; border-radius:10px;'>
             <input type="submit" name = "submit" style='height:40px; border-radius:10px; padding:0px 10px; font-weight:bold;'>
         </form>
+    </div>
     </div>
 
     <table class='table table-hover'>

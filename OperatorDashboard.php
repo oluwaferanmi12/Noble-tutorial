@@ -134,6 +134,14 @@
                         <a href="editBlog.php"  target='_blank'><div class="theLinkDiv">Edit</div>
                     </div></a>
                 </div>
+            <!-- Next Column -->
+                <div class="col-lg-4">
+                    <div class='theContent'>
+                        <p>Edit Comment</p>
+                        <i class="fa fa-edit"></i>
+                        <a href="editComment.php"  target='_blank'><div class="theLinkDiv">Edit</div>
+                    </div></a>
+                </div>
 
             <!-- Next Column -->
                 <div class="col-lg-4">
