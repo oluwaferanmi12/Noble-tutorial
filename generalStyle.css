@@ -95,6 +95,7 @@ a:hover{
 
 .new-height{
     height: 75vh;
+    
 }
 
 .nav .nav-brand .nav-brand-item{
@@ -587,7 +588,7 @@ footer.footer .move-up{
 .theComment .commentDate{
     position: absolute;
     right: 0px;
-    bottom: 0px;
+    bottom: -10px;
     font-family: var(--Abel);
     font-size: 12px;
     font-weight: bold;
@@ -631,6 +632,8 @@ footer.footer .move-up{
         flex-direction: column !important;
         
     }
+
+    
     main .showcase .showcase-content{
         width: 90%;
         

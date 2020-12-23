@@ -168,6 +168,10 @@
                   $start = ($page - 1) * $limit;
                   $query = "SELECT * FROM blog ORDER BY id DESC LIMIT $start, $limit";
                 }
+                else{
+                  $start = ($page - 1) * $limit;
+                  $query = "SELECT * FROM blog ORDER BY id DESC LIMIT $start ,$limit";
+                }
               }
 
               else if(isset($_GET['category'])){
