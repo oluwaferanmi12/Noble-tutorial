@@ -35,48 +35,20 @@
     <!------x--------- Customised Style --------------x -->
 
     
-    <title>Blog</title>
+    <?php 
+      $home = '' ;
+      $about = '' ;
+      $blog = '' ;
+      $contact = '' ;
+      $resources = '' ;
+      $testimonial = '' ;
+      
+    ?>
+    <title><?php echo $title ; ?></title>
   </head>
   <div style='overflow-x:hidden'>
   <body >
     <!----------------- NavBar ----------------- -->
-    <nav class='nav'>
-      <div class='nav-content'>
-        <div class='nav-brand'>
-          <p class='nav-brand-item'>Noble<span class='span_1'>Tutorial</span></p>
-        </div>
+    
 
-      
-          
-        <ul class='nav-menu'>
-          <li class='nav-menu-item'><a href="#">Home</a></li>
-          <li class='nav-menu-item'><a href="#">About</a></li>
-          <li class='nav-menu-item theactive'><a href="#">Blog</a></li>
-          <li class='nav-menu-item'><a href="#">Contact</a></li>
-          <li class='nav-menu-item'><a href="#">E-Resources</a></li>
-          <li class='nav-menu-item'><a href="#">Testimonial</a></li>
-        </ul>
-          
-          
-          
-          <div class='nav-social'>
-            <a href="#"><i class="fa fa-facebook-f"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-whatsapp"></i></a>
-            
-          </div>
-          <div class="toggle-collapse" >
-              <div class="toggle-icons">
-                  <i class="fa fa-bars"></i>
-              </div>
-          </div>
-          
-          
-
-
-      </div>
-      
-    </nav>
-
-    <?php include('end.php')?>
+    
