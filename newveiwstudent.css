@@ -1,3 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,600;1,300&family=Montserrat&family=Roboto:wght@500&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Anton&family=Josefin+Sans&family=Lexend+Deca&family=Livvic:ital,wght@1,300&display=swap');
+
+
+
+:root{
+    --Noto: 'Noto Sans HK', sans-serif;
+    --josefin-slab: 'Josefin Slab', serif;
+    --montserrat: 'Montserrat', sans-serif;
+    --roboto : 'Roboto', sans-serif;
+    --ubuntu:'Ubuntu', sans-serif;
+    --Abel:'Abel' , sans-serif;
+    --Anton: 'Anton' , sans-serif ;
+    --Josefin: "Josefin Sans" , sans-serif;
+    --Lexend: "Lexend Deca" , sans-serif;
+    --Livvic: "Livvic" , sans-serif ;
+    --gradient: -moz-linear-gradient(90deg, rgba(4, 84%, 49%, 1) 0%, rgba(37, 89%, 52%, 1) 100%);
+    --black-1:#1f363d;
+    --black-2:#383d3b;
+    --black-3:#012a36;
+    --black-4:#393d3f;
+    --orange:#dc493a;
+    --black-1-opacity:rgba(31, 54, 61 , 0.2);
+    --white-1:#f1faee;
+    
+
+
+
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -302,6 +335,41 @@ input{
     
 }
 
+.token-container{
+    background-color: white;
+    height: 300px;
+    width: 40%;
+    margin: auto;
+    margin-top: 70px;
+    padding: 10px;
+}
+
+.token-container .theToken .GeneratedToken{
+    font-family: var(--Abel);
+    text-align: center;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.token-container .theToken p{
+    text-align: center;
+    font-size: 40px;
+    font-family: var(--Josefin);
+    color: green;
+    padding-top: 20px;
+}
+
+.token-container .theToken .note{
+    text-align: center;
+    font-size: 16px;
+    color: red;
+    font-family: var(--Josefin);
+    letter-spacing: 1px;
+    font-weight: bold;
+
+}
+
 @media(max-width:996px){
 
     .login-form{
@@ -368,6 +436,10 @@ input{
     .editStudent-submit{
         width: 400px;
     }
+
+    .token-container{
+        width: 80%;
+    }
     
 }
 
@@ -388,6 +460,11 @@ option{
     
 
 }
+
+
+
+
+
 
 
 

@@ -82,7 +82,8 @@ a:hover{
     border-bottom: 1px solid var(--black-1-opacity);
     background-color: var(--white-1);
     height: 9.6vh;
-    transition: 1s ;
+    transition: 1s;
+    
     
 }
 .nav .nav-content{
@@ -96,7 +97,6 @@ a:hover{
 
 .collapse{
     height: 70vh;
-    
 }
 
 .new-height{
@@ -789,10 +789,375 @@ main .offer .offer-breakdown .theCol .font-container{
 }
 
 
+
+
 /*------------x------ What We Offer -------x------- */
+
+/* ---------------Team section ------------ */
+main .team{
+    padding-top: 20px;
+    background-color: var(--black-1);
+    min-height: 60vh;
+}
+
+main .team .ourTeam{
+    font-size: 34px;
+    padding-left: 10%;
+    font-family: var(--Abel);
+    font-weight: bold;
+}
+main .team .author-container{
+    min-height: 90vh;
+    padding-left: 80px;
+    /* border: 1px solid white; */
+    padding-bottom: 50px;
+    
+}
+
+main .team .team-img-container{
+    width: 20%;
+    height: 60%;
+    
+}
+
+main .team .team-img-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+main .team .author-container .founder-details{
+    width: 20%;
+    /* border: 1px solid red; */
+    color: var(--white-1)   ;
+}
+
+main .team .author-container .founder-details h3{
+    font-family: var(--Abel);
+    text-align:center;
+}
+
+main .team .author-container .founder-details p{
+    text-align: justify;
+    font-family: var(--Josefin);
+}
+
+main .team .author-container .founder-details hr{
+    background: var(--white-1);
+}
+
+main .team .tutors .Tutor-container{
+    width: 250px;
+    margin: 0px 10px;
+}
+
+main .team .tutors{
+    /* border: 1px solid red; */
+    margin: auto;
+    padding-left: 5%;
+    padding-top:50px;
+}
+
+main .team .tutors .Tutor-container img{
+    border-radius: 8px;
+}
+
+main .team .tutors .Tutor-container .tutor-details{
+    color: white;
+    /* border: 1px solid red; */
+    text-align: justify;
+}
+
+main .team .tutors .Tutor-container .tutor-details .tutor-name{
+    text-align: center;
+    padding-top: 10px;
+    font-family: var(--Abel);
+    letter-spacing: 1.5px;
+    font-size: 20px;
+}
+
+main .team .tutors .Tutor-container .tutor-details p{
+    font-family: var(--Josefin);
+    color: var(--white-1);
+}
+main .team .tutors .Tutor-container hr{
+    background-color: white;
+}
+
+main .tutor-media{
+    display: flex;
+    justify-content: space-around;
+
+}
+main .tutor-media a{
+    color:var(--white-1) !important;
+    font-size: 20px;
+    
+}
+
+main .tutor-follow{
+    text-align: center;
+    padding-bottom: 10px;
+    font-family: var(--Abel);
+}
+
+.owl-dots{
+    text-align: left !important;
+    padding-left: 30% !important;
+}
+
+
+
+
+
+
+
+/*--------x----------- Team section --------x------------ */
+
+main .example-student{
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+}
+
+main .example-student .student-head{
+    font-family: var(--Abel);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+main .example-student .student-img{
+    width: 40%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    
+}
+
+main .example-student img{
+    width: 100%;
+    height: 100%;
+}
+
+main .example-student .test-cont{
+    display: flex;
+    flex-direction: row;
+}
+
+main .example-student .example-student-cont{
+    
+}
+main .example-student .test-cont .student-test{
+    width: 70%;
+    font-family: var(--Josefin);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main .example-student .test-cont .student-test .student-test-div{
+    width: 100%;
+    font-family: var(--Josefin);
+}
+
+main .example-student .test-cont .student-test .linkToTestimonials{
+    background-color: var(--orange);
+    color: var(--white-1);
+    text-align: center;
+    padding: 8px 0px;
+    border-radius: 8px;
+    position: relative;
+    bottom: 20px;
+}
+
+
+
+/*------------------- Flash Advert -------------- */
+.flash-advert{
+    width: 100% !important;
+    background-color: var(--black-1);
+    overflow: hidden;
+    /* max-height: 20vh; */
+    color: var(--white-1);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    
+}
+
+@keyframes theSlide{
+    0%  {right:0% ;}  
+    20%  {right: 100% ;} 
+    40%  { right: 200% ;} 
+    60%  {right: 300% ;} 
+    80%  {right: 400% ;} 
+    100%  {right: 0% ;} 
+}
+.content-flash{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 0;
+    top: 0;
+    animation: theSlide linear 30s infinite;
+}
+
+.content-flash .slides h4{
+    font-family: var(--Anton);
+    letter-spacing: 2px;
+}
+
+.flash-title{
+    font-size: 24px;
+    padding-left: 30px;
+}
+
+.content-flash .slides p{
+    font-family: var(--Josefin);
+    width: 80%;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.content-flash .slides a{
+    text-decoration: none;
+    color: white ;
+}
+
+.content-flash .slides .flash-link-div{
+    background-color: var(--orange);
+    padding: 10px 20px;
+    text-align: center;
+    width: 40%;
+    border-radius: 4px;
+    font-family: var(--Josefin);
+
+}
+
+.content-flash:hover{
+    animation-play-state: paused;
+}
+
+.slides {
+    width: 100% !important;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    padding: 20px;
+    /* border-left: 1px solid var(--white-1); */
+    /* text-align: center; */
+}
+
+.flash-title{
+    font-family: var(--montserrat);
+    padding-top: 10px;
+}
+
+/*---------x---------------- Flash Advert -------------x------------ */
+
+/*------------------ Quote section ---------------- */
+.theQuote{
+    padding: 50px 50px 20px 50px;
+}
+
+
+.Quote-Section p{
+    display: inline;
+}
+
+.Quote-Section i {
+    font-size: 30px;
+}
+
+.Quote-Section .quote{
+    width: 60%;
+    margin: auto;
+    font-family: var(--Josefin);
+    font-size: 20px;
+}
+
+.Quote-Section p{
+    font-size: 16px;
+    
+}
+/*---------x---------- Quote section ----------x--------- */
 /* ----x-----------HomePage ----------x------ */
 
+/*------------------------ Resources --------------------------- */
+.token-login{
+    width: 40%;
+    margin: auto;
+    /* border: 1px solid red; */
+    text-align: center;
+    margin-top: 10%;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
+.token-login p{
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--Josefin);
+    
+}
+
+.token-login .resource-input{
+    width: 80%;
+    height: 40px;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    border: 1px solid var(--black-1-opacity);
+    border-radius: 8px;
+    font-family: var(--Josefin);
+}
+
+.token-login .resource-input::placeholder{
+    font-family: var(--Josefin);
+    color: rgba(0 , 0 , 0 ,0.5);
+}
+
+.token-login .resource-input:focus{
+    outline: none;
+    border: 1px solid var(--black-1);
+}
+
+
+.token-login .resource-submit{
+    margin-top: 10px;
+    width: 75%;
+    margin-bottom: 20px;
+    height: 40px;
+    background-color: var(--orange);
+    color: white;
+    transition: all .5s;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--Abel);
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.token-login .resource-note{
+    color: red;
+    font-family: var(--Abel);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+.token-login .resource-submit:hover{
+    background: transparent;
+    border: 1px solid var(--orange);
+    color: var(--black-1);
+}
+.token-login .resource-submit:focus{
+    outline: none;
+}
+
+
+
+/* ----------x--------------Resources -----------x------ */
 
 /*--------------------- Comment ---------------- */
 
@@ -812,6 +1177,12 @@ main .offer .offer-breakdown .theCol .font-container{
         flex-direction: column !important;
         
     }
+
+    .nav{
+        padding: 0 15px;
+    }
+
+    
 
     
     main .showcase .showcase-content{
@@ -879,7 +1250,7 @@ main .offer .offer-breakdown .theCol .font-container{
     }
 
     main .new_showcase .home-container p{
-        text-align: center; 
+        text-align: center;
         
     }
     
@@ -907,17 +1278,71 @@ main .offer .offer-breakdown .theCol .font-container{
 
     main .theSvg{
         display: none;
+        
     }
-    
 
+    main .team .team-img-container{
+        width: 80%;
+    }
+    main .team .author-container .founder-details{
+        width: 80%;
+    }
 
-    
+    .flash-advert{
+        /* max-height: 35vh !important; */
+    }
+
+    .content-flash .slides p{
+        width: 100%;
+        padding-left: 0px;
+    }
+
+    .content-flash .slides .flash-link-div{
+        width: 80%;
+    }
+
+    main .team .tutors{
+        padding-left: 20%;
+        /* padding-top: 50px; */
+    }
+
+    main .example-student .student-img{
+        width: 70%;
+        height: 100%;
+    }
+    main .example-student .test-cont .student-test .linkToTestimonials{
+        position: initial;
+    }
+
+    .Quote-Section .quote{
+        width: 100%;
+    }
+
+    main .team{
+        padding-top: 80px;
+    }
+
+    .token-login{
+        width: 90%;
+        margin-top: 30%;
+    }
 }
+
+
 
 @media (max-width:450px){
     main #advertisement .owl-nav{
         left:37% !important;
     }
+    .nav .toggle-collapse{
+        right: 10px;
+    }
+
+    .nav{
+        padding: 0px 10px;
+    }
 }
+
+
 
 

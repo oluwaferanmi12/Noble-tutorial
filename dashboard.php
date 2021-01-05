@@ -171,6 +171,14 @@
                     <a href="editComment.php"  target='_blank'><div class="theLinkDiv">Edit</div></a>
                 </div>
             </div>
+            <!-- Next Column -->
+            <div class="col-lg-4">
+                <div class='theContent'>
+                    <p>Insert Quote</p>
+                    <i class="fa fa-get-pocket"></i>
+                    <a href="quote.php"  target='_blank'><div class="theLinkDiv">Insert</div></a>
+                </div>
+            </div>
 
             
 

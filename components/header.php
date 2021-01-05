@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="newveiwstudent.css?v=<?php echo time(); ?>"/>
     <title><?php echo $title ?></title>
 </head>
-<body>
+<body style='background-color:#E0EFDE; min-height:100vh'>
     <div id = 'Header'>
         <div style = " height: 100%; padding-top: 20px;"><h3> <span style= "color:#fff; font-family: Helvetica" >Noble</span> Tutorial Class</h3>
         <p></p>

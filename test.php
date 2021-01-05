@@ -66,33 +66,7 @@
 
 ?>
 
-<?php 
-    
-    include('components/header.php');
 
-    
-    $query = "SELECT * FROM student_record";
-    $execute = mysqli_query($connection , $query);
-    while($row = mysqli_fetch_assoc($execute)){
-        $name = $row['name'];
-        $email = $row['email'];
-    
-
-    
-    
-    // while($row = mysqli_fetch_array($execute)){
-        
-    // }
-    
-?>
-
-<div>
-    <div style= 'font-size:12px ; color:red; '><?php echo $name?></div>
-    <div style= 'font-size:12px ; color:green; '><?php echo $email?></div>
-
-    <?php } ?>
-    
-</div>
 
 
 

@@ -11,12 +11,9 @@ const responsive = {
     900: {
         items: 3
     }
-
-
 };
 
 $(document).ready(function(){
-
     $nav = $('.nav');
     $toggleCollapse = $('.toggle-collapse');
 
@@ -24,7 +21,17 @@ $(document).ready(function(){
         $nav.toggleClass('new-height');
     })
 
-    $('.owl-carousel').owlCarousel({
+    $('.owl-carousel-1').owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 7000,
+        // dots: true,
+        // nav: true,
+        // navText: [$('.owl-navigation .owl-nav-prev'), $('.owl-navigation .owl-nav-next')],
+        responsive: responsive
+    });
+
+    $('.owl-carousel-0').owlCarousel({
         loop:true,
         autoplay:true,
         autoplayTimeout:7000,
@@ -36,9 +43,16 @@ $(document).ready(function(){
 
     });
 
+    
+
+
+    
+
     $('.move-up span').click(function () {
         $('html , body').animate({
             scrollTop: 0
         }, 1000)
     })
+
+
 })
